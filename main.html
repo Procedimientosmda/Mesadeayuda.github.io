@@ -26,6 +26,215 @@
 }
 
 
+/* Contenedor general en pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .nav-card {
+    width: 100%;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .procedure-step ul {
+    padding-left: 20px;
+  }
+
+  .procedure-step img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .procedure-item {
+    width: 100%;
+  }
+
+  .procedure-header {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  h2, h3, h4 {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .btn-img-toggle {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+.step-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 6px;
+}
+
+
+/* ============================================================
+   RESPONSIVE TOTAL PARA CELULARES & TABLETS
+   Compatible con iPhone, Android, tablets y pantallas pequeñas
+   ============================================================ */
+   @media (max-width: 768px) {
+
+/* 🔹 Ajuste general */
+html {
+  zoom: 1; /* Evita zoom forzado en móvil */
+}
+
+body {
+  padding: 0 10px;
+}
+
+/* 🔹 Header */
+.header-content {
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.header-logo,
+.header-logo-right {
+  width: 70px;
+}
+
+.header-title-wrapper h1 {
+  font-size: 1.8rem;
+}
+
+.header-title-wrapper p {
+  font-size: 1rem;
+}
+
+/* 🔹 Buscador */
+#searchContainer {
+  padding: 10px;
+}
+
+.search-bar input {
+  font-size: 1rem;
+  padding: 10px 14px;
+}
+
+/* 🔹 Menú principal */
+.nav-grid {
+  grid-template-columns: 1fr;   /* UNA COLUMNA */
+  gap: 1rem;
+}
+
+.nav-card {
+  padding: 1.2rem;
+}
+
+.nav-card h3 {
+  font-size: 1.1rem;
+}
+
+/* 🔹 Footer del menú */
+.menu-footer {
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.menu-footer h3 {
+  font-size: 1.3rem;
+}
+
+/* 🔹 Secciones internas */
+.content-section {
+  padding: 1.2rem;
+}
+
+.content-section h2 {
+  font-size: 1.4rem;
+}
+
+/* 🔹 Procedimientos desplegables */
+.procedure-header {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.procedure-title {
+  font-size: 1rem;
+}
+
+.procedure-step {
+  padding: 1rem;
+}
+
+.procedure-step h4 {
+  font-size: 1rem;
+}
+
+.procedure-step ul li {
+  font-size: 0.9rem;
+  padding: 0.45rem 0.75rem 0.45rem 1.4rem;
+}
+
+/* 🔹 Botones mostrar imagen */
+.btn-img-toggle {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+/* 🔹 Imágenes */
+.step-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 🔹 Grillas de sistemas */
+.system-grid {
+  grid-template-columns: 1fr;
+}
+
+.system-item {
+  padding: 1rem;
+}
+
+/* 🔹 Botón volver */
+.back-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+}
+}
+
+/* ===============================
+   EXTRA PARA PANTALLAS CHICAS
+ =============================== */
+@media (max-width: 420px) {
+.header-title-wrapper h1 {
+  font-size: 1.5rem;
+}
+
+.hp-logo-text {
+  font-size: 3.5rem;
+}
+
+.support-text {
+  font-size: 1.3rem;
+}
+}
+
+
+
+@media (max-width: 768px) {
+  header, .title-section {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
 
 html {
   zoom: 1.1;   /* 150% de tamaño */
@@ -339,10 +548,36 @@ mark {
       font-weight: 600;
     }
 
-    .nav-grid {
+    /* ============================
+   GRID RESPONSIVE REAL
+   ============================ */
+
+/* Escritorio grande: 5 columnas (igual que ahora) */
+.nav-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);   /* 5 columnas exactas */
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.2rem;
+}
+
+/* Laptops y tablets horizontales */
+@media (max-width: 1200px) {
+  .nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets verticales */
+@media (max-width: 900px) {
+  .nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .nav-grid {
+    grid-template-columns: 1fr; /* UNA COLUMNA */
+  }
 }
 
     .nav-card {
@@ -4928,9 +5163,389 @@ pause
             se genera correctamente el documento PDF en la carpeta configurada.
           </p>
         </div>
-
       </div>
     </div>
+
+
+    <!-- ============================================================= -->
+<!--   PROCEDIMIENTO IMPRESORA HP E40040DN                         -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('hpE40040')">
+    <span class="procedure-title">Instalación y Configuración Impresora HP E40040dn</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="hpE40040" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para la <strong>instalación, configuración inicial, asignación de IP,
+        bandejas y controlador</strong> de la impresora <strong>HP E40040dn</strong>.
+      </p>
+    </div>
+
+    <!-- PASO 1 · REQUISITOS -->
+    <div class="procedure-step">
+      <h4>Paso 1: Requisitos previos</h4>
+      <ul>
+        <li>Impresora HP E40040dn</li>
+        <li>Cable de poder MAGIC</li>
+        <li>Cable USB o Ethernet según instalación</li>
+        <li>Etiqueta de hostname (formato HP60XXX)</li>
+        <li>Controlador HP Universal Printing PCL6 v7.3</li>
+        <li>IP asignada por PJUD (finaliza entre .40 y .50)</li>
+      </ul>
+    </div>
+
+    <!-- PASO 2· INSTALACIÓN FÍSICA -->
+    <div class="procedure-step">
+      <h4>Paso 2: Instalación física</h4>
+      <ul>
+        <li>Desembalar impresora y retirar cintas naranjas.</li>
+        <li>Cargar papel oficio en la bandeja 2.</li>
+        <li>Conectar cable de poder y red (si aplica).</li>
+        <li>Encender equipo y seguir asistente inicial.</li>
+      </ul>
+      <button class="btn-img-toggle" id="hp40040_1-btn" onclick="toggleStepImage('hp40040_1')">Mostrar imagen</button>
+      <img id="hp40040_1" class="step-img" src="img/hp40040_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 · CONFIGURACIÓN INICIAL -->
+    <div class="procedure-step">
+      <h4>Paso 3: Configuración inicial</h4>
+      <ul>
+        <li>Idioma: Español</li>
+        <li>Zona horaria: GMT -4 Santiago</li>
+        <li>Fecha/Hora correcta</li>
+        <li>AutoSend: No</li>
+        <li>Impresión desde USB: No</li>
+      </ul>
+    </div>
+
+    <!-- PASO 4 · HOSTNAME -->
+    <div class="procedure-step">
+      <h4>Paso 4: Configuración de nombre de host</h4>
+      <p>Ruta: <strong>Configuración → Ethernet → TCP/IP → Nombre de host</strong></p>
+      <ul>
+        <li>Asignar nombre: <strong>HP60XXX</strong></li>
+      </ul>
+
+      <button class="btn-img-toggle" id="hp40040_2-btn" onclick="toggleStepImage('hp40040_2')">Mostrar imagen</button>
+      <img id="hp40040_2" class="step-img" src="img/hp40040_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 5 · CONFIG RED → DHCP -->
+    <div class="procedure-step">
+      <h4>Paso 5: Validación de red (si es por Ethernet)</h4>
+      <ul>
+        <li>Esperar que obtenga IP por DHCP.</li>
+        <li>Validar en: <strong>Ethernet → Información</strong></li>
+      </ul>
+    </div>
+
+    <!-- PASO 6 · IP MANUAL -->
+    <div class="procedure-step">
+      <h4>Paso 6: Configurar IP manual</h4>
+      <p>Ruta: <strong>Ethernet → Configuración IPv4 → Método → Manual</strong></p>
+      <p>Ingresar IP asignada por PJUD.</p>
+      <button class="btn-img-toggle" id="hp40040_3-btn" onclick="toggleStepImage('hp40040_3')">Mostrar imagen</button>
+      <img id="hp40040_3" class="step-img" src="img/hp40040_ip.png" style="display:none;">
+    </div>
+
+    <!-- PASO 7 · BANDEJAS -->
+    <div class="procedure-step">
+      <h4>Paso 7: Configuración de bandejas</h4>
+      <ul>
+        <li>Bandeja 1: Carta</li>
+        <li>Bandeja 2: Oficio 8.5 × 13</li>
+      </ul>
+      <button class="btn-img-toggle" id="hp40040_4-btn" onclick="toggleStepImage('hp40040_4')">Mostrar imagen</button>
+      <img id="hp40040_4" class="step-img" src="img/hp40040_bandejas.png" style="display:none;">
+    </div>
+
+    <!-- PASO 8 · FIRMWARE -->
+    <div class="procedure-step">
+      <h4>Paso 8: Actualización de firmware</h4>
+      <ul>
+        <li>Insertar pendrive con firmware.</li>
+        <li>Ir a: <strong>Herramientas → Mantenimiento → Actualizar firmware USB</strong></li>
+        <li>No interrumpir el proceso.</li>
+      </ul>
+    </div>
+
+    <!-- PASO 9 · CONTROLADOR -->
+    <div class="procedure-step">
+      <h4>Paso 9: Instalación del controlador</h4>
+      <ul>
+        <li>Descomprimir controlador en <strong>C:\SOPORTE</strong></li>
+        <li>Ejecutar <strong>Install.exe</strong></li>
+        <li>Modo de instalación:
+          <ul>
+            <li><strong>USB → Modo USB Plug and Play</strong></li>
+            <li><strong>Red → Modo Tradicional</strong></li>
+          </ul>
+        </li>
+        <li>Agregar impresora por dirección IP</li>
+        <li>Controlador: <strong>HP Universal Printing PCL6 (v7.3)</strong></li>
+      </ul>
+    </div>
+
+    <!-- PASO 10 · CONFIGURACIÓN DE IMPRESIÓN -->
+    <div class="procedure-step">
+      <h4>Paso 10: Configuración del controlador</h4>
+      <ul>
+        <li>Tamaño papel: Oficio 8.5x13</li>
+        <li>Origen papel: Selección automática</li>
+        <li>Impresión a doble cara: No</li>
+      </ul>
+    </div>
+
+    <!-- PASO 11 · INFORME A ADMIN -->
+    <div class="procedure-step optional-step">
+      <h4>Paso 11: Informar a administración de plataforma de impresión</h4>
+      <p>Debe enviar:</p>
+      <ul>
+        <li>Nombre de la impresora</li>
+        <li>Número de serie</li>
+        <li>Versión de firmware</li>
+        <li>Dirección IP</li>
+        <li>Tribunal donde se instaló</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- PROCEDIMIENTO IMPRESORA HP MFP E62655 -->
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('e62655')">
+    <span class="procedure-title">Instalación y Configuración Impresora HP MFP E62655</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="e62655" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para la instalación, configuración inicial, asignación de IP,
+        administración de bandejas e instalación de controlador de la impresora HP MFP E62655.
+        Proyecto HP – PJUD5 (2024–2029).
+      </p>
+    </div>
+
+    <!-- Sección: Requisitos -->
+    <div class="procedure-step">
+      <h4>1. Requisitos</h4>
+      <ul>
+        <li>Impresora HP MFP E62655</li>
+        <li>Cable de poder MAGIC</li>
+        <li>Cable de red ethernet</li>
+        <li>Etiquetas de nombre (HP60XXX)</li>
+        <li>Pendrive con firmware actualizado</li>
+        <li>Controlador HP Universal Printing PCL 6 v7.3</li>
+        <li>Dirección IP entregada por coordinación HP</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Instalación física -->
+    <div class="procedure-step">
+      <h4>2. Instalación Física</h4>
+      <ul>
+        <li>Desembalar cuidadosamente la impresora siguiendo la guía de instalación.</li>
+        <li>Retirar cintas de seguridad y pestillos del tóner.</li>
+        <li>Cargar papel en bandeja según configuración requerida.</li>
+        <li>Encender la impresora y esperar el arranque inicial.</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Configuración Inicial -->
+    <div class="procedure-step">
+      <h4>3. Configuración Inicial</h4>
+      <ul>
+        <li>Idioma: Español</li>
+        <li>Ubicación: Chile</li>
+        <li>Zona Horaria: GMT -4 Santiago</li>
+        <li>Formato 24 horas</li>
+        <li>Impresión USB: No</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Configuración de Red -->
+    <div class="procedure-step">
+      <h4>4. Asignación de IP y Hostname</h4>
+      <p>Asignar nombre HP60XXX correspondiente al tribunal.</p>
+      <ul>
+        <li>Ir a CONFIGURACIÓN &gt; IPv4</li>
+        <li>Seleccionar método MANUAL</li>
+        <li>Ingresar IP entregada por PJUD</li>
+        <li>Validar conexión</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Bandejas -->
+    <div class="procedure-step">
+      <h4>5. Configuración de Bandejas</h4>
+      <ul>
+        <li>Bandeja 1: Oficio 8,5x13</li>
+        <li>Bandeja 2: Carta 8,5x11</li>
+        <li>Bandeja 3 (si existe): Oficio 8,5x13</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Controlador -->
+    <div class="procedure-step">
+      <h4>6. Instalación del Controlador</h4>
+      <ul>
+        <li>Ejecutar Install.exe (HP Universal Printing PCL 6 v7.3)</li>
+        <li>Modo Tradicional</li>
+        <li>Agregar impresora → Dirección IP</li>
+        <li>Desmarcar “Consultar a la impresora”</li>
+        <li>Seleccionar driver PCL6 v7.3</li>
+      </ul>
+    </div>
+
+    <!-- Sección: Informe final -->
+    <div class="procedure-note">
+      <strong>📌 Nota:</strong>  
+      Todos los datos de instalación deben informarse a Administración de Plataforma de Impresión:
+      <ul>
+        <li>Hostname</li>
+        <li>IP asignada</li>
+        <li>N° de serie</li>
+        <li>Version firmware</li>
+        <li>Tribunal instalado</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ============================================================= -->
+<!--   PROCEDIMIENTO IMPRESORA LEXMARK MX711 – WINDOWS 10          -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procLEX711')">
+    <span class="procedure-title">Instalación y Configuración Impresora Lexmark MX711 (Windows 10)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procLEX711" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para la <strong>instalación, configuración y carga de drivers</strong>
+        del equipo <strong>Lexmark MX711</strong> en sistemas Windows 10 utilizados por el 
+        Poder Judicial. Se incluyen pasos de instalación por red, configuración de bandejas
+        y parámetros generales de impresión.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Descargar controlador Lexmark MX711</h4>
+      <ul>
+        <li>Ingresar al repositorio corporativo o página oficial de Lexmark.</li>
+        <li>Descargar el driver correspondiente al modelo MX711 para Windows 10.</li>
+        <li>Guardar el instalador en el directorio <strong>C:\Soporte</strong>.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_1-btn" onclick="toggleStepImage('lex711_1')">Mostrar imagen</button>
+      <img id="lex711_1" class="step-img" src="img/sm_lex711_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar instalador</h4>
+      <ul>
+        <li>Ejecutar el instalador como Administrador.</li>
+        <li>Seleccionar instalación mediante red.</li>
+        <li>Aceptar términos y condiciones.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_2-btn" onclick="toggleStepImage('lex711_2')">Mostrar imagen</button>
+      <img id="lex711_2" class="step-img" src="img/sm_lex711_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Detección automática de la impresora</h4>
+      <ul>
+        <li>El instalador buscará la impresora dentro de la red del tribunal.</li>
+        <li>Seleccionar el equipo Lexmark MX711 cuando aparezca.</li>
+        <li>Presionar <strong>Siguiente</strong>.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_3-btn" onclick="toggleStepImage('lex711_3')">Mostrar imagen</button>
+      <img id="lex711_3" class="step-img" src="img/sm_lex711_paso3.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3.1 -->
+    <div class="procedure-step">
+      <h4>Paso 3.1: Si la impresora NO aparece</h4>
+      <ul>
+        <li>Seleccionar opción <strong>Agregar impresora mediante IP</strong>.</li>
+        <li>Ingresar la IP asignada por el tribunal.</li>
+        <li>Continuar la instalación.</li>
+      </ul>
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Configuración de software adicional</h4>
+      <ul>
+        <li>Mantener valores predeterminados.</li>
+        <li>Instalar utilidades recomendadas por Lexmark.</li>
+        <li>Finalizar instalación.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_5-btn" onclick="toggleStepImage('lex711_5')">Mostrar imagen</button>
+      <img id="lex711_5" class="step-img" src="img/sm_lex711_paso5.png" style="display:none;">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Configurar tamaño y bandejas</h4>
+      <ul>
+        <li>Abrir "Dispositivos e impresoras".</li>
+        <li>Botón derecho → <strong>Preferencias de impresión</strong>.</li>
+        <li>Establecer tamaño: <strong>Folio 8.5 x 13</strong>.</li>
+        <li>Configurar bandejas: MU → A4, Bandeja 1 → Folio.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_6-btn" onclick="toggleStepImage('lex711_6')">Mostrar imagen</button>
+      <img id="lex711_6" class="step-img" src="img/sm_lex711_paso6.png" style="display:none;">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6: Prueba de impresión</h4>
+      <ul>
+        <li>Desde Windows, seleccionar “Imprimir página de prueba”.</li>
+        <li>Confirmar que bandejas y tamaño coinciden con la configuración del tribunal.</li>
+        <li>Validar estado del equipo en la interfaz Lexmark.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="lex711_7-btn" onclick="toggleStepImage('lex711_7')">Mostrar imagen</button>
+      <img id="lex711_7" class="step-img" src="img/sm_lex711_paso7.png" style="display:none;">
+    </div>
+
+    <div class="procedure-note">
+      <strong>📌 Nota:</strong>  
+      En caso de inconsistencias de tamaño o reconocimiento de bandejas, reiniciar la cola de impresión
+      y validar el firmware del equipo.
+    </div>
+
+  </div>
+</div>
+
+
+
 
   </section> 
 
