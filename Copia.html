@@ -1,0 +1,5148 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa de Ayuda HP - Soporte Técnico</title>
+  <style>
+
+
+.sub-btn {
+  width: 100%;
+  text-align: left;
+  background: #f1f7ff;
+  border: 1px solid #cfe2ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sub-btn:hover {
+  background: #e0efff;
+}
+
+
+
+html {
+  zoom: 1.1;   /* 150% de tamaño */
+}
+
+
+/* 🔍 CONTENEDOR DEL BUSCADOR */
+#searchContainer {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Barra */
+.search-bar input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 2px solid #0071c5;
+  outline: none;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.search-bar input:focus {
+  border-color: #00aaff;
+  box-shadow: 0 5px 18px rgba(0,140,255,0.25);
+}
+
+/* Filtros */
+.search-filters {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-filters label {
+  background: #f1f3f5;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Resultados */
+#searchResults {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: none;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.search-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-item:hover {
+  background: #eef7ff;
+}
+
+mark {
+  background: yellow;
+  font-weight: bold;
+}
+
+
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0096d6 0%, #0071c5 100%);
+      color: #2d2d2d;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0096d6 0%, #0071c5 100%);
+      padding: 3rem 2rem 2rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .link-actions {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+
+
+    .step-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: none; /* Oculta por defecto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-img-toggle {
+  background: #0071c5;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn-img-toggle:hover {
+  background: #005a9e;
+}
+
+
+    .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+/* LOGOS DEL MISMO TAMAÑO */
+.header-logo,
+.header-logo-right {
+    width: 90px;
+    height: auto;
+    opacity: 0.95;
+}
+
+/* TÍTULO CENTRADO */
+.header-title-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.header-title-wrapper h1 {
+    margin: 0;
+    font-size: 2.6rem;
+}
+
+.header-title-wrapper p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+    .header-logo {
+      width: 200px;                  /* tamaño del logo */
+      height: auto;
+      opacity: 0.85;               /* transparencia */
+      filter: drop-shadow(0 0 4px rgba(0,0,0,0.25));
+      transition: opacity 0.3s ease;
+    }
+
+    .header-logo:hover {
+      opacity: 1;                  /* se ve más fuerte al pasar el mouse */
+    }
+
+    .link-button {
+      border: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #0096d6 0%, #0071c5 100%);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .link-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .link-button-secondary {
+      background: #ffffff;
+      color: #0071c5;
+      border: 1px solid #0071c5;
+      box-shadow: none;
+    }
+
+    .link-button-secondary:hover {
+      background: #e3f2fd;
+    }
+
+
+    .header h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .header p {
+      color: rgba(255,255,255,0.95);
+      font-size: 1.15rem;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .mauweb-search {
+      margin-top: 0.75rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .mauweb-search input {
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #0071c5;
+      flex: 1;
+      min-width: 180px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    .mauweb-search input:focus {
+      border-color: #0096d6;
+      box-shadow: 0 0 4px rgba(0,150,214,0.4);
+    }
+
+
+    .hero-image {
+      width: 100%;
+      max-width: 800px;
+      height: 300px;
+      margin: 2rem auto;
+      background: linear-gradient(135deg, #0071c5 0%, #00b4d8 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      top: -150px;
+      right: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .hp-logo-text {
+      font-size: 5rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .support-text {
+      font-size: 1.8rem;
+      margin: 0.5rem 0 0 0;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .nav-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-section h2 {
+      color: #0071c5;
+      font-size: 1.8rem;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #0096d6;
+      font-weight: 600;
+    }
+
+    .nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);   /* 5 columnas exactas */
+  gap: 1.2rem;
+}
+
+    .nav-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #0096d6;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,150,214,0.2);
+      border-left-color: #0071c5;
+    }
+
+    .nav-card h3 {
+      color: #0071c5;
+      font-size: 1.25rem;
+      margin: 0 0 0.75rem 0;
+      font-weight: 600;
+    }
+
+    .nav-card p {
+      color: #5a5a5a;
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .content-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-section h2 {
+      color: #0071c5;
+      font-size: 2rem;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #0096d6;
+    }
+
+    .content-section h3 {
+      color: #0096d6;
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .content-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .content-section li {
+      padding: 0.75rem 0 0.75rem 2rem;
+      margin: 0.5rem 0;
+      position: relative;
+      line-height: 1.6;
+      color: #4a4a4a;
+      background: #f8f9fa;
+      border-radius: 6px;
+    }
+
+    .content-section li::before {
+      content: '▶';
+      position: absolute;
+      left: 0.75rem;
+      color: #0096d6;
+      font-size: 0.8rem;
+    }
+
+    .footer-signature {
+  background: linear-gradient(135deg, #0071c5 0%, #005a9e 100%);
+  color: white;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  font-size: 0.82rem; /* más pequeño en general */
+}
+
+.signature-content h3 {
+  font-size: 1.2rem;  /* antes 1.6rem */
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.signature-content p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem; /* antes 1rem */
+}
+
+.signature-box {
+  background: rgba(255,255,255,0.12);
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin: 0.9rem auto;
+  max-width: 420px;  /* más angosto */
+  border-left: 3px solid #00b4ff;
+}
+
+.signature-title {
+  font-size: 0.9rem;
+}
+
+.signature-name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.signature-role,
+.signature-email {
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.signature-footer {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+
+.footer-spacing {
+  height: 100px;  /* ajusta si lo quieres más abajo */
+}
+
+
+
+    .back-button {
+      background: linear-gradient(135deg, #0096d6 0%, #0071c5 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,150,214,0.3);
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .system-item {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid #0096d6;
+      transition: all 0.3s ease;
+    }
+
+    .system-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 8px rgba(0,150,214,0.2);
+    }
+
+    .system-item h4 {
+      color: #0071c5;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .system-item p {
+      color: #5a5a5a;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .tool-badge {
+      display: inline-block;
+      background: #0096d6;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin: 0.25rem;
+      font-weight: 500;
+    }
+
+    .footer {
+      background: linear-gradient(135deg, #0071c5 0%, #005a9e 100%);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .procedure-list {
+      margin-top: 1.5rem;
+    }
+
+    .procedure-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border: 1px solid #dee2e6;
+      transition: all 0.3s ease;
+    }
+
+    .procedure-item:hover {
+      box-shadow: 0 4px 8px rgba(0,150,214,0.15);
+    }
+
+    .procedure-header {
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, #0096d6 0%, #0071c5 100%);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .procedure-header:hover {
+      background: linear-gradient(135deg, #0071c5 0%, #005a9e 100%);
+    }
+
+    .procedure-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .procedure-icon {
+      font-size: 0.9rem;
+      transition: transform 0.3s ease;
+    }
+
+    .procedure-item.expanded .procedure-icon {
+      transform: rotate(180deg);
+    }
+
+    .procedure-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+    }
+
+    .procedure-item.expanded .procedure-content {
+      max-height: 5000px;
+      padding: 1.5rem;
+    }
+
+    .procedure-intro {
+      background: #e3f2fd;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #0096d6;
+    }
+
+    .procedure-scope {
+      margin-bottom: 2rem;
+    }
+
+    .procedure-scope h4 {
+      color: #0071c5;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .procedure-scope ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .procedure-scope li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .procedure-scope li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0096d6;
+      font-weight: bold;
+    }
+
+    .procedure-step {
+      background: white;
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border-left: 4px solid #0096d6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .procedure-step h4 {
+      color: #0071c5;
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem 0;
+      font-weight: 600;
+    }
+
+    .procedure-step p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+      color: #4a4a4a;
+    }
+
+    .procedure-step ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .procedure-step ul li {
+      background: #f8f9fa;
+      border-radius: 6px;
+      margin: 0.35rem 0;
+      padding: 0.5rem 0.75rem 0.5rem 1.5rem;
+      position: relative;
+    }
+
+    .procedure-step ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0.6rem;
+      color: #0096d6;
+      font-weight: bold;
+    }
+
+    .optional-step {
+      border-left-color: #ffc107;
+      background: #fffbf0;
+    }
+
+    .optional-step h4 {
+      color: #f57c00;
+    }
+
+    .highlight-text {
+      background: #fff3cd;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border-left: 3px solid #ffc107;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      color: #856404;
+      display: inline-block;
+    }
+
+    .procedure-note {
+      background: #d1ecf1;
+      padding: 1rem;
+      border-radius: 6px;
+      border-left: 4px solid #0dcaf0;
+      margin-top: 1.5rem;
+      color: #055160;
+    }
+
+
+/* ===== FOOTER SOLO PARA MENÚ PRINCIPAL ===== */
+
+.menu-footer {
+  margin-top: 40px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  color: white;
+  animation: fadeIn 0.6s ease;
+}
+
+.menu-footer h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.menu-footer p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.menu-footer .footer-box {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.18);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.menu-footer .footer-copy {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+
+
+
+
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+
+
+    <header class="header" role="banner">
+  <div class="header-content">
+
+    <!-- LOGO IZQUIERDO (FCOM) -->
+    <img src="/img/logo.png" alt="Logo FCOM" class="header-logo">
+
+    <!-- TITULO CENTRADO -->
+    <div class="header-title-wrapper">
+      <h1>Mesa de Ayuda HP</h1>
+      <p>Procedimientos y Guías de Soporte Técnico</p>
+    </div>
+
+    <!-- LOGO DERECHO (HP) -->
+    <img src="/img/logo_hp.png" alt="Logo HP" class="header-logo-right">
+
+  </div>
+</header>
+
+
+<!-- 🔍 BUSCADOR AVANZADO PROFESIONAL -->
+<div id="searchContainer">
+  <div class="search-bar">
+    <input id="advancedSearchInput"
+           placeholder="Buscar procedimiento..."
+           oninput="runAdvancedSearch()">
+  </div>
+
+  <div id="searchResults"></div>
+</div>
+
+
+</div>
+
+  <main class="container">
+   <nav id="mainNav" class="nav-section">
+    <h2>Menú Principal</h2>
+    <div class="nav-grid">
+     <div class="nav-card" onclick="showSection('quienes-somos')" role="button" tabindex="0">
+      <h3>Quiénes Somos</h3>
+      <p>Documentación institucional, organigrama y procedimientos de atención</p>
+     </div>
+     <div class="nav-card" onclick="showSection('sistemas-internos')" role="button" tabindex="0">
+      <h3>Sistemas Internos</h3>
+      <p>Herramientas y plataformas para gestión de requerimientos</p>
+     </div>
+     <div class="nav-card" onclick="showSection('sistemas-judiciales')" role="button" tabindex="0">
+      <h3>Sistemas Judiciales</h3>
+      <p>Procedimientos técnicos para sistemas SITCI, SITCO, SITLA y más</p>
+     </div>
+     <div class="nav-card" onclick="showSection('aplicativos')" role="button" tabindex="0">
+      <h3>Aplicativos</h3>
+      <p>Guías de instalación y configuración de software</p>
+     </div>
+     <div class="nav-card" onclick="showSection('impresoras')">
+    <h3>Impresoras</h3>
+  <p>Instalación, configuración y manuales de equipos de impresión y digitalización.</p>
+</div>
+</div>
+</div>
+
+
+   </nav>
+
+
+
+   <div id="menuFooter" class="menu-footer">
+    <h3>Mesa de Ayuda HP – PJUD 4.2</h3>
+    <p>Plataforma desarrollada y mantenida por el equipo de <strong>Soporte Nivel 2</strong>, bajo supervisión técnica de Jefatura.</p>
+
+    <div class="footer-box">
+      <p><strong>Supervisor MDA – Poder Judicial</strong></p>
+      <p>Fernando Daniel Alonso Varas Cádiz</p>
+      <p>Soporte N°2 – Mesa de Ayuda HP • PJUD 4</p>
+      <p>✉ fvaras_hp@pjud.cl</p>
+    </div>
+
+    <p class="footer-copy">© 2025 – FCOM Servicios Informáticos</p>
+  </div>
+
+   <!-- QUIÉNES SOMOS -->
+   <section id="quienes-somos" class="content-section">
+    <button class="back-button" onclick="showMain()">← Volver al Menú Principal</button>
+    <h2>Quiénes Somos</h2>
+    <p style="margin-top: 2rem; padding: 1.5rem; background: #e3f2fd; border-radius: 8px; color: #0071c5;">
+      La Mesa de Ayuda HP es el punto central de contacto para soporte técnico, dedicada a proporcionar asistencia eficiente
+      y profesional a todos los usuarios de sistemas judiciales y equipamiento tecnológico.
+    </p>
+
+    <!-- ACUERDOS DE NIVEL DE SERVICIO (SLAs) Y TIEMPOS DE RESPUESTA -->
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procQS3')">
+    <span class="procedure-title">Acuerdos de Nivel de Servicio (SLAs) y Tiempos de Respuesta</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procQS3" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Este documento establece los parámetros formales de atención, trazabilidad y tiempos
+        máximos de respuesta para las solicitudes ingresadas a la Mesa de Ayuda HP Inc., 
+        garantizando atención oportuna y alineada al contrato vigente con el Poder Judicial.
+      </p>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Objetivo</h4>
+      <p>
+        Definir el proceso y tiempos formales para la atención de requerimientos e incidencias
+        gestionadas en MauWeb, asegurando cumplimiento del SLA establecido para el servicio.
+      </p>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Alcance</h4>
+      <p>
+        Aplica a todas las solicitudes ingresadas por el Poder Judicial hacia la Mesa de Ayuda HP Inc.,
+        desde su creación hasta su cierre conforme por parte del usuario.
+      </p>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Compromisos de Contacto y Tiempos de Respuesta</h4>
+
+      <p><strong>1. Contacto Inicial</strong></p>
+      <ul>
+        <li>El agente debe llamar al número indicado y presentarse con protocolo formal.</li>
+        <li>Se registra en MauWeb la hora exacta de inicio de soporte.</li>
+      </ul>
+
+      <p><strong>2. Intentos Fallidos</strong></p>
+      <ul>
+        <li>Realizar 3 intentos de contacto telefónico.</li>
+        <li>Registrar fecha y hora de cada intento.</li>
+      </ul>
+
+      <p><strong>3. Notificación de Inactividad</strong></p>
+      <ul>
+        <li>En caso de no contacto, enviar correo al usuario solicitando respuesta.</li>
+        <li>Copiar siempre a la Jefatura de Mesa de Ayuda.</li>
+      </ul>
+
+      <p><strong>4. Anulación Automática</strong></p>
+      <ul>
+        <li>El requerimiento se anula si no hay respuesta del usuario dentro de 2 horas.</li>
+        <li>El usuario puede generar un nuevo folio si persiste el problema.</li>
+      </ul>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Acuerdos de Nivel de Escalación</h4>
+      <p>Estos escalamientos permiten atención especializada sin perder trazabilidad del caso.</p>
+      <ul>
+        <li>Aplica a requerimientos Urgentes o Prioridad Alta.</li>
+        <li>Se envía correo a áreas responsables del contrato.</li>
+        <li>Debe informarse avance en el menor tiempo posible.</li>
+      </ul>
+      <p class="highlight-text">📧 escalaimiento_soportepc@pjud.cl</p>
+    </div>
+
+    <div class="procedure-note">
+      <strong>📌 Nota:</strong>
+      Todos los agentes deben cumplir estos acuerdos como parte obligatoria del servicio.
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ DE PRIORIZACIÓN -->
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procQS4')">
+    <span class="procedure-title">Matriz de Priorización de Requerimientos</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procQS4" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        La matriz de priorización permite clasificar los requerimientos según su impacto y urgencia,
+        asegurando que los recursos de Mesa de Ayuda se enfoquen adecuadamente.
+      </p>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Categorías de Prioridad</h4>
+      <ul>
+        <li><strong>Prioridad Alta (Urgente):</strong> Incidencias que detienen completamente el trabajo del usuario o del tribunal.</li>
+        <li><strong>Prioridad Media:</strong> Problemas que afectan tareas pero con alternativas temporales.</li>
+        <li><strong>Prioridad Baja:</strong> Consultas, solicitudes menores o mejoras no críticas.</li>
+      </ul>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Criterios de Evaluación</h4>
+      <ul>
+        <li><strong>Impacto:</strong> Evaluación del daño operativo provocado por la falla.</li>
+        <li><strong>Urgencia:</strong> Tiempo máximo tolerable antes de afectar procesos judiciales.</li>
+        <li><strong>Recurrencia:</strong> Si el problema se presenta frecuentemente, aumenta la prioridad.</li>
+      </ul>
+    </div>
+
+    <div class="procedure-step">
+      <h4>Matriz Base</h4>
+      <p>
+        <strong>Impacto Alto + Urgencia Alta → PRIORIDAD ALTA</strong><br>
+        <strong>Impacto Medio + Urgencia Alta → PRIORIDAD MEDIA</strong><br>
+        <strong>Impacto Bajo + Urgencia Baja → PRIORIDAD BAJA</strong>
+      </p>
+    </div>
+
+    <div class="procedure-note">
+      <strong>📌 Nota:</strong>  
+      La prioridad define el tiempo de respuesta, pero no reemplaza las acciones del SLA.
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="procedure-list">
+      <!-- NUESTRA MESA DE AYUDA (HP) -->
+      <div class="procedure-item">
+        <div class="procedure-header" onclick="toggleProcedure('procQS1')">
+          <span class="procedure-title">Nuestra Mesa de Ayuda (HP)</span>
+          <span class="procedure-icon">▼</span>
+        </div>
+        <div id="procQS1" class="procedure-content">
+          <div class="procedure-intro">
+            <p>
+              La Mesa de Ayuda (Help Desk) de TI es el punto central de contacto para todos los usuarios.
+              Operamos como el primer nivel de soporte para la Dirección de Tecnología, garantizando la
+              continuidad operativa y la eficiencia en el uso de los recursos informáticos, con un enfoque
+              especializado en el ecosistema HP.
+            </p>
+          </div>
+
+          <div class="procedure-scope">
+            <h4>Funciones y Responsabilidades Clave</h4>
+            <ul>
+              <li>Gestión de requerimientos e incidentes, desde la recepción hasta el cierre.</li>
+              <li>Solución de problemas (troubleshooting) en primer nivel y escalamiento oportuno.</li>
+              <li>Soporte especializado para infraestructura y equipamiento HP.</li>
+              <li>Documentación, mantenimiento de base de conocimientos y mejora continua del servicio.</li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Gestión de Requerimientos e Incidentes</h4>
+            <p>
+              <strong>Recepción y Registro:</strong>
+              Gestionamos todas las solicitudes de soporte (incidentes, problemas técnicos y peticiones
+              de servicio) a través de nuestros canales oficiales (por ejemplo, MauWeb). Cada solicitud es registrada
+              y se le asigna un número de seguimiento.
+            </p>
+            <p>
+              <strong>Diagnóstico Inicial:</strong>
+              Realizamos un diagnóstico inicial para identificar la naturaleza del problema o la necesidad del requerimiento,
+              priorizando según criticidad e impacto en la operación.
+            </p>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Solución de Problemas (Troubleshooting)</h4>
+            <p>
+              <strong>Resolución en Primer Nivel:</strong>
+              Resolvemos la mayor parte de los incidentes técnicos directamente, incluyendo problemas con
+              software de productividad, conectividad de red y fallas comunes en equipos de escritorio y
+              portátiles HP.
+            </p>
+            <p>
+              <strong>Escalamiento:</strong>
+              Cuando un problema excede la capacidad de resolución de primer nivel, lo escalamos de manera
+              inmediata y documentada a los equipos de soporte de segundo nivel (administración de sistemas, redes,
+              desarrollo, entre otros), manteniendo informado al usuario.
+            </p>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Soporte de Infraestructura HP</h4>
+            <p>
+              Ofrecemos asistencia técnica especializada para el mantenimiento, configuración y solución de
+              fallas en el hardware y periféricos de la marca HP (incluyendo estaciones de trabajo,
+              impresoras y laptops), asegurando su óptimo rendimiento y disponibilidad.
+            </p>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Documentación y Mejora Continua</h4>
+            <p>
+              Mantenemos actualizada la base de conocimientos con las soluciones a problemas recurrentes,
+              con el fin de agilizar futuros soportes y entregar respuestas consistentes a los usuarios.
+            </p>
+            <p>
+              Monitoreamos tendencias de fallas y requerimientos para proponer mejoras en procesos,
+              herramientas y capacitación de usuarios, contribuyendo a la mejora continua del servicio
+              de la Mesa de Ayuda HP.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BASES MESA DE AYUDA - PROCEDIMIENTO DE ATENCIÓN -->
+      <div class="procedure-item">
+        <div class="procedure-header" onclick="toggleProcedure('procQS2')">
+          <span class="procedure-title">Bases Mesa de Ayuda - Procedimiento de Atención</span>
+          <span class="procedure-icon">▼</span>
+        </div>
+        <div id="procQS2" class="procedure-content">
+          <div class="procedure-intro">
+            <p>
+              <strong>Objetivo:</strong>
+              Documentar la forma correcta de atender las solicitudes de servicio generadas por el cliente
+              Poder Judicial a la Mesa de Ayuda de HP Inc., asegurando un servicio homogéneo, trazable y
+              alineado con los acuerdos de nivel de servicio (SLA).
+            </p>
+          </div>
+
+          <div class="procedure-scope">
+            <h4>Alcance, Asignaciones y Responsabilidades</h4>
+            <ul>
+              <li>
+                Este procedimiento debe cumplirse por todos los integrantes del proceso de Mesa de Ayuda,
+                desde el ingreso de una solicitud de servicio en MauWeb hasta el cierre conforme por parte del usuario.
+              </li>
+              <li>
+                Aplica a todas las unidades de servicio que estén en contrato vigente y registradas en la
+                plataforma MauWeb.
+              </li>
+              <li>
+                Es de cumplimiento obligatorio para todos los integrantes que presten colaboración a la
+                Mesa de Ayuda de HP Inc.
+              </li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Términos y Definiciones</h4>
+            <ul>
+              <li><strong>Requerimiento:</strong> Petición de una acción o recurso necesario para el correcto uso del equipo, cuya ausencia dificulta la labor diaria del usuario.</li>
+              <li><strong>Incidencia:</strong> Acción o evento inesperado que interrumpe o imposibilita la labor diaria del usuario.</li>
+              <li><strong>Solucionado:</strong> Estado utilizado por el agente MDA para indicar que el requerimiento fue atendido y se completaron las acciones técnicas de soporte.</li>
+              <li><strong>Cerrado:</strong> Estado final del requerimiento, gestionado exclusivamente por el usuario cuando queda conforme con la solución aplicada.</li>
+              <li><strong>Anulado:</strong> Opción del agente MDA cuando corresponde descartar el requerimiento (el usuario puede objetar este estado y dejar el caso en condición pendiente).</li>
+              <li><strong>Invalidado:</strong> Opción del usuario para anular el requerimiento que ha creado.</li>
+              <li><strong>Objetado:</strong> Opción del usuario cuando no está conforme con la solución; el folio es devuelto a la bandeja del agente que efectuó la atención.</li>
+              <li><strong>Derivado:</strong> Estado que indica cambio de responsable o área de atención para un ticket.</li>
+              <li><strong>SCO:</strong> Servicio de Continuidad Operativa.</li>
+              <li><strong>Remasterización:</strong> Proceso de volver a cargar la imagen del sistema operativo para corregir errores causados por mala manipulación o corrupción del sistema.</li>
+              <li><strong>VNC:</strong> Programa de software de escritorio remoto que provee acceso remoto bidireccional entre computadoras, disponible para los sistemas operativos más comunes.</li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Normas Básicas: Antes de iniciar las actividades</h4>
+            <ul>
+              <li>
+                Todo el personal de atención de nivel 1 de la Mesa de Ayuda de HP Inc. debe conocer las
+                características del servicio establecidas en el catálogo de servicios.
+              </li>
+              <li>
+                Los catálogos de servicios deben mantenerse como información documentada, disponible para
+                los agentes de la Mesa de Ayuda para su consulta permanente.
+              </li>
+              <li>
+                Los agentes deben tener claramente identificado el SLA de atención de los requerimientos,
+                considerando que el tiempo se mide desde que el requerimiento llega a su bandeja en MauWeb.
+              </li>
+              <li>
+                Todos los agentes deben presentarse con el siguiente saludo: <strong>“Buenas
+                &lt;&lt;días, tardes, noches&gt;&gt;”</strong>.
+              </li>
+              <li>
+                El saludo debe continuar indicando origen y motivo de la llamada: <br>
+                <em>“Le habla &lt;&lt;Nombre&gt;&gt;, de la Mesa de Ayuda HP Inc., lo llamo por el requerimiento
+                &lt;&lt;número de folio&gt;&gt; asociado al problema reportado &lt;&lt;breve descripción&gt;&gt;.”</em>
+              </li>
+              <li>
+                Si el agente logra comunicación con el usuario, debe dejar registro en MauWeb indicando la
+                hora en que comenzó el soporte.
+              </li>
+              <li>
+                El agente debe verificar que los datos de contacto entregados por el usuario (teléfono celular,
+                red fija, correo, etc.) sean correctos y estén actualizados.
+              </li>
+              <li>
+                Si el agente no logra comunicación con el usuario, debe dejar constancia en MauWeb, por ejemplo:
+                <em>“Se realiza llamado al número indicado como contacto el &lt;&lt;fecha&gt;&gt; a las
+                &lt;&lt;hora&gt;&gt; sin éxito.”</em>
+              </li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Normas Básicas: Durante la actividad</h4>
+            <ul>
+              <li>
+                Los agentes deben atender únicamente a un usuario por cada llamado, permitiendo entregar
+                una atención personalizada y concentrada.
+              </li>
+              <li>
+                Los agentes no deben utilizar sus teléfonos móviles ni mantener distracciones mientras
+                estén atendiendo un caso.
+              </li>
+              <li>
+                El agente debe verificar el número de serie del equipo para comprobar que se encuentra
+                dentro del contrato correspondiente.
+              </li>
+              <li>
+                El agente debe tener acceso al repositorio con procedimientos y ejecutables necesarios
+                para realizar el soporte.
+              </li>
+              <li>
+                El agente debe asegurarse de utilizar procedimientos actualizados, validados y alineados
+                con las directrices de la Mesa de Ayuda y del cliente.
+              </li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Normas Básicas: Al finalizar la actividad</h4>
+            <ul>
+              <li>
+                Si el soporte no se puede completar porque los pasos del procedimiento no solucionan el problema,
+                se debe realizar un escalamiento al soporte de Nivel 2 (N2) para asesoría y revisión avanzada.
+              </li>
+              <li>
+                Si el soporte N2 no logra detectar el problema o no se consigue solución, se debe escalar a Nivel 3 (N3),
+                derivando el requerimiento y enviando correo de respaldo que detalle las acciones realizadas y
+                los resultados obtenidos sin éxito.
+              </li>
+              <li>
+                Si el soporte resulta exitoso, el agente debe comunicarse nuevamente con el usuario,
+                solicitar que realice pruebas y obtener su aprobación explícita.
+              </li>
+              <li>
+                Una vez que el usuario da su aprobación, el agente debe informar que finalizará la sesión remota,
+                dejará de visualizar la pantalla del usuario y procederá a marcar el requerimiento como
+                <strong>“Solucionado”</strong> en MauWeb, quedando a la espera de que el usuario lo cierre.
+              </li>
+            </ul>
+          </div>
+
+          <div class="procedure-step">
+            <h4>Escalamiento de solicitudes de servicio a Mesa de Ayuda</h4>
+            <p>
+              Todo requerimiento creado hacia la Mesa de Ayuda en condición <strong>Urgente</strong> o con
+              <strong>Prioridad Alta</strong> puede ser escalado por los funcionarios a través del siguiente correo:
+            </p>
+            <p class="highlight-text">escalamiento_soportepc@pjud.cl</p>
+            <p>
+              En este grupo de correo se encuentran los integrantes de cada una de las áreas responsables
+              que pueden dar solución inmediata al caso. Dichos integrantes tienen el deber de responder a la
+              brevedad, informando avance o solución del requerimiento que fue escalado.
+            </p>
+          </div>
+
+          <div class="procedure-note">
+            <strong>📌 Nota:</strong>
+            El cumplimiento de este procedimiento es esencial para mantener la calidad, trazabilidad y
+            coherencia del servicio entregado por la Mesa de Ayuda HP al Poder Judicial. Todo desvío o
+            excepción debe ser documentado y, cuando corresponda, informado a la jefatura para su análisis.
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+
+   <!-- SISTEMAS INTERNOS -->
+   <section id="sistemas-internos" class="content-section">
+    <button class="back-button" onclick="showMain()">← Volver al Menú Principal</button>
+    <h2>Sistemas Internos y Herramientas</h2>
+    <p style="margin-bottom: 2rem; font-size: 1.05rem; color: #5a5a5a;">
+      La Mesa de Ayuda HP utiliza los siguientes sistemas internos y herramientas para la gestión eficiente
+      de requerimientos y atención a usuarios:
+    </p>
+    <div class="system-grid">
+        <div class="system-item">
+  <h4>ProManager</h4>
+  <p>Plataforma principal para registro y seguimiento de incidencias y solicitudes.</p>
+  <div class="link-actions">
+    <button class="link-button" onclick="window.open('https://serviciomda.promanager.cl/login', '_blank')">
+      Abrir ProManager
+    </button>
+    <button class="link-button link-button-secondary" onclick="copyProManagerUrl()">
+      Copiar enlace
+    </button>
+  </div>
+</div>
+
+<div class="system-item">
+  <h4>MAUWEB</h4>
+  <p>Sistema interno de Mesa de Ayuda para gestión de casos y documentación.</p>
+
+  <div class="link-actions">
+    <button class="link-button" onclick="window.open('https://mesaayuda.intranet.pjud/mesa_ayuda/req_usuario.php', '_blank')">
+      Abrir MAUWEB
+    </button>
+
+    <button class="link-button link-button-secondary" onclick="copyMauwebUrl()">
+      Copiar enlace
+    </button>
+  </div>
+
+  <div class="mauweb-search">
+    <input id="mauwebReqInput" type="text" placeholder="Ingrese número de requerimiento" />
+    <button class="link-button" onclick="buscarRequerimientoMauweb()">
+      Buscar folio
+    </button>
+  </div>
+</div>
+
+<div class="system-item">
+  <h4>Gestión de Requerimientos SCO</h4>
+  <p>Hoja de cálculo para seguimiento y control de requerimientos.</p>
+
+  <div class="link-actions">
+    <button class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1euq_Xx5NbXH19gPOt0adqJNfHMQjY8J5AzngUwDUj-s/edit?usp=sharing', '_blank')">
+      Control Sistema Requerimientos
+    </button>
+  </div>
+</div>
+
+<div class="system-item">
+  <h4>Sistema de Comentarios Predeterminados</h4>
+  <p>Guía de Soporte HP - Herramienta creada por agentes para generar comentarios estandarizados en MauWeb.</p>
+
+  <div class="link-actions">
+    <button class="link-button" onclick="window.open('https://e-b-innovations.github.io/#', '_blank')">
+      Abrir Comentarios Predeterminados
+    </button>
+  </div>
+</div>
+
+<div class="system-item">
+  <h4>HP PartSurfer</h4>
+  <p>Herramienta para verificar información de equipos mediante número de serie, proporcionando detalles de piezas y componentes.</p>
+
+  <div class="link-actions">
+    <!-- BOTÓN QUE ABRE HP PARTSURFER CON UN EJEMPLO -->
+    <button class="link-button" onclick="window.open('https://partsurfer.hp.com/?searchtext=MXL2242VNB', '_blank')">
+      Ir a PartSurfer
+    </button>
+  </div>
+
+  <!-- Buscador de serie -->
+  <div class="mauweb-search">
+    <input id="hpPartInput" type="text" placeholder="Ingrese número de serie (ej: 4CE251BD2G)" />
+    <button class="link-button" onclick="buscarSeriePartSurfer()">
+      Buscar Serie
+    </button>
+  </div>
+</div>
+
+
+
+<div class="system-item">
+  <h4>Consultor de Equipos en Contrato</h4>
+  <p>Plataforma para consultar el estado y vigencia de equipos que se encuentran bajo contrato activo.</p>
+
+  <div class="link-actions">
+    <button class="link-button" onclick="window.open('https://jmarrufo-gh.github.io/equiposfcom-web.github.io/', '_blank')">
+      Abrir Consultor de Equipos
+    </button>
+  </div>
+</div>
+
+
+   </section>
+
+   <!-- SISTEMAS JUDICIALES -->
+
+
+
+   
+   <!-- SISTEMA SITCO -->
+<section id="sitco" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>SITCO – Sistema Informático de Tramitación de Cobranza</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para la correcta configuración y uso del sistema SITCO del Poder Judicial, 
+    basado en la documentación interna entregada.  
+    Este módulo describe paso a paso la preparación del navegador, permisos y verificaciones requeridas.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ubicar el acceso SITCO en el Escritorio</h4>
+    <p>
+      Al iniciar sesión en el equipo, en el Escritorio debe encontrarse el acceso directo <strong>“SITCO”</strong>, 
+      tal como se muestra en la imagen.
+    </p>
+    <img src="img/sitco_paso1.png" alt="Icono SITCO en el escritorio" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Abrir SITCO mediante Google Chrome</h4>
+    <p>
+      Por políticas del Poder Judicial, SITCO debe ejecutarse exclusivamente en <strong>Google Chrome</strong>.
+    </p>
+    <img src="img/sitco_paso2.png" alt="SITCO abierto en Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Permitir contenido No Seguro y Configuración de Sitios</h4>
+    <p>
+      Chrome puede mostrar advertencia de <em>“Sitio No Seguro”</em>.  
+      Debes ingresar a <strong>Configuración del sitio</strong> y otorgar permisos completos.
+    </p>
+    <ul>
+      <li>Ir a Permisos del sitio.</li>
+      <li>Habilitar “Contenido no seguro”.</li>
+      <li>Habilitar descargas, dispositivos y accesos relevantes.</li>
+    </ul>
+    <img src="img/sitco_paso3.png" alt="Configuración contenido no seguro" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 - IMÁGENES DE CONFIGURACIÓN (del PDF p.3) -->
+  <div class="procedure-step">
+    <h4>Detalle visual de permisos requeridos</h4>
+    <img src="img/sitco_permisos1.png" alt="Permisos Chrome SITCO parte 1" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/sitco_permisos2.png" alt="Permisos Chrome SITCO parte 2" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Pruebas con usuario y apertura de documentos</h4>
+    <p>
+      Se realizan pruebas funcionales y se indica al usuario abrir documentos <strong>Word</strong> con clic derecho →  
+      <strong>“Abrir siempre con el visualizador del sistema”</strong>.
+    </p>
+    <img src="img/sitco_paso4.png" alt="Abrir documentos con visualizador del sistema" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Restablecer Chrome y verificar versión 32 bits</h4>
+    <p>
+      Es obligatorio verificar que Chrome esté ejecutándose en su versión <strong>32 bits</strong>, según lo solicitado por PJUD.
+    </p>
+    <ul>
+      <li>Ir a Configuración → Restablecer configuración.</li>
+      <li>Asegurar que Chrome esté actualizado y ejecutándose en 32 bits.</li>
+    </ul>
+    <img src="img/sitco_paso5a.png" alt="Chrome versión 32 bits" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/sitco_paso5b.png" alt="Restablecer configuración Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- DESCARGA DE PDF ORIGINAL -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial en PDF</h4>
+    <p>Para referencia completa, puedes descargar el documento original aquí:</p>
+    <a href="/mnt/data/Procedimiento Sistema SITCO.pdf" download 
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Procedimiento SITCO (PDF)
+    </a>
+  </div>
+
+
+</section>
+
+
+
+<!-- SISTEMA SITLA -->
+<section id="sitla" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>SITLA – Sistema Informático de Tramitación Laboral</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    El sistema SITLA permite gestionar y tramitar causas laborales del Poder Judicial de manera
+    electrónica a través del navegador Google Chrome.  
+    A continuación se detalla el procedimiento oficial de uso y configuración según el documento interno del PJUD.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ubicar el acceso SITLA en el Escritorio</h4>
+    <p>
+      Una vez iniciada la sesión en el equipo, en el escritorio debe encontrarse el ícono  
+      <strong>“SITLA”</strong>, según lo descrito en el procedimiento oficial.
+    </p>
+    <img src="img/sitla_paso1.png" alt="Ícono SITLA en el escritorio" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Abrir SITLA mediante Google Chrome</h4>
+    <p>
+      Por políticas del Poder Judicial, SITLA debe ejecutarse exclusivamente a través de
+      <strong>Google Chrome</strong>, tal como se especifica en el procedimiento.
+    </p>
+    <img src="img/sitla_paso2.png" alt="SITLA abierto en Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Permitir contenido No Seguro y Configuración del Sitio</h4>
+    <p>
+      Chrome puede mostrar advertencias de “sitio no seguro”.  
+      Debes ingresar a <strong>Configuración del sitio</strong> y habilitar todos los permisos necesarios:
+    </p>
+
+    <ul>
+      <li>Descargas automáticas → <strong>Permitir</strong></li>
+      <li>Contenido no seguro → <strong>Permitir</strong></li>
+      <li>Controladores USB / HID → Ajustar según corresponda</li>
+      <li>Acceso a portapapeles, archivos y dispositivos → Permitir</li>
+    </ul>
+
+    <p>Las imágenes a continuación muestran la configuración recomendada:</p>
+
+    <img src="img/sitla_permisos1.png" alt="Permisos SITLA Chrome parte 1" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/sitla_permisos2.png" alt="Permisos SITLA Chrome parte 2" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Prueba con el usuario y apertura de documentos</h4>
+    <p>
+      Se recomienda realizar pruebas funcionales en presencia del usuario.  
+      Cuando se abran documentos Word, se debe indicar:
+    </p>
+
+    <p class="highlight-text">Clic derecho → "Abrir siempre con el visualizador del sistema"</p>
+
+    <img src="img/sitla_paso4.png" alt="Abrir siempre con visualizador del sistema" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Restablecer Google Chrome y verificar versión 32 Bits</h4>
+    <p>
+      Según el procedimiento oficial, es obligatorio validar que Chrome esté ejecutándose en
+      <strong>32 bits</strong>.  
+      Además, debe realizarse un <strong>restablecimiento de configuración</strong>.
+    </p>
+
+    <ul>
+      <li>Ir a Configuración → Restablecer configuración</li>
+      <li>Comprobar versión del navegador</li>
+    </ul>
+
+    <img src="img/sitla_paso5a.png" alt="Chrome versión 32 bits" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/sitla_paso5b.png" alt="Restablecer configuración Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- DESCARGA PDF OFICIAL -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial en PDF</h4>
+    <p>Puedes descargar la documentación original del procedimiento SITLA:</p>
+
+    <a href="/mnt/data/Procedimiento Sistema SITLA.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Procedimiento SITLA (PDF)
+    </a>
+  </div>
+
+
+</section>
+
+<!-- ============================== -->
+<!--        SISTEMA SIAGJ          -->
+<!-- ============================== -->
+
+<section id="siagj" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>SIAGJ – Sistema Reforma Procesal Penal</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para la correcta configuración, carga de módulos y pruebas del sistema 
+    <strong>SIAGJ</strong>, basado íntegramente en la documentación técnica proporcionada.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ejecutar acceso directo SIAGJ</h4>
+    <p>
+      Una vez ejecutado el archivo de configuración <strong>V12</strong>, en el Escritorio debe encontrarse 
+      el acceso directo <strong>SIAGJ</strong>.  
+      Ejecútalo haciendo doble clic.
+    </p>
+    <img src="img/siagj_paso1.png" alt="Acceso directo SIAGJ en Escritorio" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Ejecutar complemento en todos los sitios web</h4>
+    <p>
+      Al abrir SIAGJ se mostrará una ventana con opciones de ejecución de complementos.  
+      Haz clic derecho en la barra superior de Internet Explorer y selecciona:
+    </p>
+    <p class="highlight-text">"Ejecutar el complemento en todos los sitios web"</p>
+    <img src="img/siagj_paso2.png" alt="Ejecutar complementos SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2B -->
+  <div class="procedure-step">
+    <h4>Habilitar complementos en Internet Explorer</h4>
+    <p>
+      Al aparecer la ventana emergente, presiona <strong>Ejecutar</strong> para instalar los complementos.  
+      Luego ve a:
+    </p>
+
+    <ul>
+      <li>Herramientas → Administrar complementos</li>
+      <li>En “Mostrar”, seleccionar: <strong>Todos los complementos</strong></li>
+      <li>Habilitar todos los complementos listados en el panel derecho</li>
+    </ul>
+
+    <img src="img/siagj_complementos1.png" alt="Administrar complementos SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/siagj_complementos2.png" alt="Habilitar complementos Internet Explorer" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/siagj_complementos3.png" alt="Habilitar complementos Internet Explorer" style="width:100%;border-radius:8px;margin-top:10px;">
+
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Cerrar y volver a abrir Internet Explorer</h4>
+    <p>
+      Luego de activar todos los complementos, cierra Internet Explorer y vuelve a abrir SIAGJ.
+    </p>
+    <p>
+      Ingresa con tus <strong>credenciales de Mesa de Ayuda</strong> y selecciona <strong>Ingresar</strong>.
+    </p>
+    <img src="img/siagj_paso3.png" alt="Ingreso SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Descargar módulos del menú principal</h4>
+    <p>
+      Una vez dentro del menú principal de SIAGJ, debes descargar 
+      <strong>todos los módulos desde R.P.A hasta Ingreso</strong>, según lo indicado en la documentación.
+    </p>
+    <img src="img/siagj_modulos.png" alt="Descarga de módulos SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Pruebas de Gestión y apertura de documentos</h4>
+    <p>
+      Accede al módulo de <strong>Gestión</strong> para realizar las pruebas de funcionamiento:
+    </p>
+
+    <ul>
+      <li>Abrir un Word de prueba</li>
+      <li>Seleccionar “Rol Interno”</li>
+      <li>Ingresar número de rol: <strong>77</strong></li>
+      <li>Año: <strong>2021</strong></li>
+      <li>Presionar tecla <strong>Tab</strong> para cargar datos</li>
+    </ul>
+
+    <img src="img/siagj_gestion.png" alt="Gestión SIAGJ rol interno" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/siagj_gestion2.png" alt="Carga de rol SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/siagj_gestion3.png" alt="Carga de rol SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Validar ventanas emergentes y apertura de Word</h4>
+    <p>
+      Aparecerán ventanas emergentes para cargar información.  
+      Selecciona <strong>Aceptar</strong> en cada una.
+    </p>
+    <p>
+      Luego, entra al apartado <strong>Historia</strong>, haz clic derecho en la opción:
+    </p>
+
+    <p class="highlight-text">"Fijar día y hora para audiencias" → “Ver documento Word”</p>
+
+    <p>El sistema debe abrir correctamente el archivo Word.</p>
+
+    <img src="img/siagj_paso6.png" alt="Historia y documento Word SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/siagj_paso7.png" alt="Historia y documento Word SIAGJ" style="width:100%;border-radius:8px;margin-top:10px;">
+
+  </div>
+
+  <!-- VIDEO -->
+  <div class="procedure-step optional-step">
+    <h4>Video de Configuración</h4>
+    <p>Puedes consultar el video oficial de apoyo (según PDF):</p>
+    <a href="#" style="color:#0071c5; font-weight:600;">Ver video de configuración SIAGJ</a>
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar PDF oficial</h4>
+    <p>Descarga el procedimiento oficial tal como fue entregado:</p>
+    <a href="/mnt/data/Configuración Sistema SIAGJ.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Procedimiento SIAGJ (PDF)
+    </a>
+  </div>
+
+
+</section>
+
+
+<!-- SISTEMA GESTIÓN PENAL -->
+<section id="gestion-penal" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>Gestión Penal – Sistema Judicial Penal</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para soporte y configuración del sistema 
+    <strong>Gestión Penal del Poder Judicial de Chile</strong>.  
+    Este módulo describe paso a paso el acceso, configuración de permisos, uso de módulos 
+    principales y ejecución de la extensión JAPP requerida para la firma de trámites.
+  </p>
+
+  <!-- INTRODUCCIÓN -->
+  <div class="procedure-step">
+    <h4>Descripción General</h4>
+    <p>
+      El Sistema de Gestión Penal permite la tramitación digital de causas penales, garantizando 
+      trazabilidad, seguridad de la información y seguimiento en tiempo real.  
+      El soporte técnico debe verificar acceso web, configuración de navegador, permisos y 
+      funcionamiento de extensiones locales. 
+    </p>
+  </div>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ingresar al Sistema Gestión Penal</h4>
+    <p>Desde el equipo del usuario, acceder al sistema web Gestión Penal, tal como lo muestra la siguiente imagen:</p>
+    <img src="img/gestionpenal_paso1.png" alt="Acceso a Gestión Penal" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Acceder mediante Google Chrome</h4>
+    <p>
+      Por políticas del Poder Judicial, Gestión Penal debe ejecutarse exclusivamente en 
+      <strong>Google Chrome</strong>.  
+      El usuario debe ingresar con sus credenciales institucionales.
+    </p>
+    <img src="img/gestionpenal_paso2.png" alt="Ingreso a Gestión Penal en Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Permitir contenido No Seguro (Configuración del Sitio)</h4>
+    <p>
+      Chrome puede alertar <em>“Sitio No Seguro”</em>.  
+      Se debe acceder a <strong>Configuración del sitio</strong> y habilitar todos los permisos necesarios:
+    </p>
+    <ul>
+      <li>Permitir contenido no seguro.</li>
+      <li>Permitir descargas.</li>
+      <li>Permitir uso de extensiones y ventanas emergentes.</li>
+    </ul>
+    <img src="img/gestionpenal_paso3.png" alt="Permisos Chrome Gestión Penal" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Ingresar a la Bandeja de Firma</h4>
+    <p>
+      Una vez dentro del sistema, dirigirse al módulo <strong>Bandeja de Firma → Firma de Trámites (Segpres)</strong>.
+    </p>
+
+    <p>
+      Cambiar la opción de filtro:
+      <strong>“Trámites: Todos (sin medidas regulares)”</strong>  
+      Luego seleccionar <strong>Buscar causas para firmar</strong>.
+    </p>
+
+    <img src="img/gestionpenal_paso4a.png" alt="Módulo Firma Gestión Penal" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Activar extensión JAPP desde Disco Local C</h4>
+    <p>
+      La extensión <strong>JAPP</strong> es obligatoria para ejecutar la firma de documentos.  
+      Se debe activar de la siguiente manera:
+    </p>
+    <ul>
+      <li>Ir a <strong>Disco Local C:\Japp</strong>.</li>
+      <li>Hacer <strong>clic derecho → Ejecutar</strong>.</li>
+      <li>Verificar su ejecución en los <strong>iconos ocultos de la barra de tareas</strong>.</li>
+    </ul>
+
+    <img src="img/gestionpenal_paso5a.png" alt="Ejecución JAPP carpeta" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/gestionpenal_paso5b.png" alt="Icono JAPP en barra" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Configurar Word para compatibilidad</h4>
+    <p>
+      Para evitar errores al abrir documentos judiciales, se debe ajustar Word:
+    </p>
+    <ul>
+      <li>Abrir un documento en blanco.</li>
+      <li>Ir a <strong>Opciones → Guardar</strong>.</li>
+      <li>Cambiar <strong>“Optimizar para compatibilidad”</strong>.</li>
+    </ul>
+    <img src="img/gestionpenal_paso6.png" alt="Configuración Word compatibilidad" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 7 -->
+  <div class="procedure-step">
+    <h4>Paso 7: Abrir causa en Word desde el sistema</h4>
+    <p>
+      Finalmente, se abre un documento directamente desde Gestión Penal para verificar:
+    </p>
+    <ul>
+      <li>Que el archivo abra correctamente en Word.</li>
+      <li>Que permita edición.</li>
+      <li>Que la firma funcione adecuadamente.</li>
+    </ul>
+
+    <img src="img/gestionpenal_paso7.png" alt="Documento Judicial en Word" style="width:100%;border-radius:8px;margin-top:10px;">
+
+    <p><strong>Importante:</strong> La edición del documento debe realizarla el usuario final.</p>
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial en PDF</h4>
+    <p>Documento original de soporte técnico:</p>
+
+    <a href="/mnt/data/Procedimiento Sistema Gestión Penal.pdf"
+       download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Gestión Penal (PDF)
+    </a>
+  </div>
+
+  
+</section>
+
+
+<!-- ============================== -->
+<!--          SISTEMA SITFA         -->
+<!-- ============================== -->
+
+<section id="sitfa" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">
+    ← Volver a Sistemas Judiciales
+  </button>
+
+  <h2>SITFA – Sistema de Tribunales de Familia</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para la correcta configuración, carga de módulos y prueba 
+    funcional del sistema <strong>SITFA</strong>, basado íntegramente en el documento institucional.
+  </p>
+
+  <div class="procedure-step">
+    <h4>Paso 1: Ejecutar acceso SITFA desde el Escritorio</h4>
+    <p>Ejecutar el acceso directo <strong>SITFA</strong> ubicado en el Escritorio.</p>
+    <img src="img/sitfa_paso1.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 2: Ingreso al sistema con credenciales</h4>
+    <p>Ingresar usuario y contraseña institucional.</p>
+    <img src="img/sitfa_paso2.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 3: Seleccionar módulo Gestión</h4>
+    <p>Desde el menú principal, seleccionar <strong>Gestión</strong>.</p>
+    <img src="img/sitfa_paso3.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 4: Descargar módulos</h4>
+    <p>Descargar todos los módulos desde el menú superior según el orden especificado.</p>
+    <img src="img/sitfa_paso4.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 5: Buscar causa de prueba</h4>
+    <p>Ingresar la causa de prueba:</p>
+    <p class="highlight-text">RIT: C – 25 – 2021</p>
+    <img src="img/sitfa_paso5.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 6: Revisar trámites pendientes</h4>
+    <p>Acceder a <strong>Trámites Pendientes</strong> y reproducir el trámite.</p>
+    <img src="img/sitfa_paso6.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 7: Ingresar texto</h4>
+    <p>Seleccionar <strong>Ingresar Texto</strong>.</p>
+    <img src="img/sitfa_paso7.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step">
+    <h4>Paso 8: Abrir Word y guardar cambios</h4>
+    <p>Modificar el documento en Word, guardar y volver al sistema.</p>
+    <img src="img/sitfa_paso8.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial SITFA</h4>
+    <a href="/mnt/data/Procedimiento Sistema Sitfa.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;">
+       Descargar Procedimiento SITFA (PDF)
+    </a>
+  </div>
+
+
+</section>
+
+
+
+<!-- ============================== -->
+<!--          SISTEMA SITCI         -->
+<!-- ============================== -->
+
+<section id="sitci" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">
+    ← Volver a Sistemas Judiciales
+  </button>
+
+  <h2>SITCI – Sistema de Tramitación Civil</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para la correcta configuración, carga de módulos y pruebas 
+    del sistema <strong>SITCI</strong>, basado íntegramente en la documentación interna.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ejecutar acceso SITCI desde el Escritorio</h4>
+    <p>Ejecutar el acceso directo <strong>SITCI</strong> ubicado en el Escritorio.</p>
+    <img src="img/sitci_paso1.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Ingresar con credenciales</h4>
+    <p>Ingresar usuario y contraseña institucional para acceder al sistema.</p>
+    <img src="img/sitci_paso2.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Cargar módulos del sistema</h4>
+    <p>Desde el menú principal, cargar todos los módulos en el orden recomendado.</p>
+    <img src="img/sitci_paso3.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Buscar causa de prueba</h4>
+    <p>Ingresar la causa de prueba:</p>
+    <p class="highlight-text">Rol interno de Tribunal: C – 25 – 2021</p>
+    <img src="img/sitci_paso4.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Abrir Gestión y tramites pendientes</h4>
+    <p>Acceder a <strong>Gestión</strong> y verificar funcionamiento del sistema.</p>
+    <img src="img/sitci_paso5.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Permitir Permisos| Abrir Word | Guardar cambios</h4>
+    <p>Modificar un documento de ejemplo en Word, guardar y volver al sistema.</p>
+    <img src="img/sitci_paso6.png" style="width:100%;border-radius:8px;margin-top:10px;">
+    <img src="img/sitci_paso7.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial SITCI</h4>
+    <a href="/mnt/data/Procedimiento Sistema Sitci.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;">
+       Descargar Procedimiento SITCI (PDF)
+    </a>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ============================== -->
+<!--        MONITO WEB 2           -->
+<!-- ============================== -->
+
+<section id="monitoweb2" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>Monito Web 2 – Sistema de Certificados Registro Civil</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para instalación, activación y configuración de 
+    <strong>Monito Web 2</strong>, utilizado para la emisión de certificados del Servicio de Registro Civil.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Instalar PDF24 y archivos del sistema</h4>
+    <p>
+      Desde el repositorio institucional, copiar la carpeta <strong>MonitoWEB</strong> al Escritorio y ejecutar:
+    </p>
+    <ul>
+      <li><strong>Instalador.bat</strong></li>
+      <li>Presionar una tecla cuando finalice</li>
+    </ul>
+    <img src="img/monito_paso1.png" alt="Instalación Monito Web 2"
+         style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Verificar compatibilidad en Internet Explorer</h4>
+    <p>
+      Monito Web 2 utiliza IE11 en modo empresa.  
+      Es necesario validar la compatibilidad:
+    </p>
+    <ul>
+      <li>Abrir Internet Explorer</li>
+      <li>Ingresar: <span class="highlight-text">about:compat</span></li>
+      <li>Confirmar carga de lista PJUD</li>
+    </ul>
+    <img src="img/monito_paso2.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Configurar opciones en el sitio oficial</h4>
+    <p>
+      Acceder a configuración avanzada:
+    </p>
+    <p class="highlight-text">https://monitoweb2.srcei.cl/monlib/monprint/options.html</p>
+    <ul>
+      <li>Aceptar advertencia de permisos</li>
+      <li>Ingresar a pestaña <strong>Avanzado</strong></li>
+      <li>Seleccionar <strong>Cambiar nombre</strong></li>
+    </ul>
+    <img src="img/monito_paso3.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Registrar Nombre del Usuario y Organización</h4>
+    <ul>
+      <li><strong>Nombre usuario:</strong> Nombre del funcionario</li>
+      <li><strong>Organización:</strong> Poder Judicial</li>
+      <li>Seleccionar <strong>Copiar solicitud al portapapeles</strong></li>
+    </ul>
+    <img src="img/monito_paso4.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Enviar solicitud al Registro Civil</h4>
+    <p>
+      El usuario debe ser activado por Registro Civil.  
+      Enviar correo:
+    </p>
+    <p class="highlight-text">soporteconvenios@registrocivil.gob.cl</p>
+    <p>Copiar texto generado en el paso anterior.</p>
+    <img src="img/monito_paso5.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Pegar código de respuesta</h4>
+    <ul>
+      <li>Volver a opciones avanzadas</li>
+      <li>Seleccionar: <strong>Pegar respuesta del portapapeles</strong></li>
+      <li>Aceptar</li>
+      <li>Cerrar completamente Internet Explorer</li>
+    </ul>
+    <img src="img/monito_paso6.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 7 -->
+  <div class="procedure-step">
+    <h4>Paso 7: Configurar impresión local y remota</h4>
+    <ul>
+      <li>Asignar la misma impresora en ambos campos</li>
+      <li>Activar: <strong>Convertir certificado LA120 a HTML</strong></li>
+      <li>Activar vista preliminar HTML</li>
+    </ul>
+    <img src="img/monito_paso7.png" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 8 -->
+  <div class="procedure-step">
+    <h4>Paso 8: Prueba final de funcionamiento</h4>
+    <p>Navegar a:</p>
+    <p class="highlight-text">https://monitoweb2.srcei.cl/monito</p>
+    <ul>
+      <li>Ingresar credenciales</li>
+      <li>Realizar impresión de prueba</li>
+      <li>Validar generación en PDF24</li>
+    </ul>
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial</h4>
+    <a href="/mnt/data/Procedimiento Monito Web 2 .pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar PDF Monito Web 2
+    </a>
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ============================== -->
+<!--        DOCFLOW - SISTEMA       -->
+<!-- ============================== -->
+
+<section id="docflow" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>Docflow – Sistema de Digitalización y Gestión Documental</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial de instalación y activación de <strong>Docflow 5</strong>, basado en el documento institucional.  
+    Incluye instalación del complemento, Imaging for Windows y copia final de ejecutables requeridos.  
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Acceder al Repositorio de Instalación</h4>
+    <p>Ingresar a la siguiente ruta:</p>
+    <p class="highlight-text">Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Aplicaciones Corporativas\Docflow</p>
+    <p>Copiar el archivo <strong>DocflowPJUD.exe</strong> y ejecutarlo.</p>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Confirmar Instalación</h4>
+    <p>Presionar <strong>Aceptar</strong> y luego <strong>Siguiente</strong> en el asistente.</p>
+
+    <img src="img/docflow_paso1.png" class="step-img" id="df2">
+    <button id="df2-btn" class="btn-img-toggle" onclick="toggleStepImage('df2')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Instalar complemento</h4>
+    <p>Seleccionar <strong>Sí</strong> cuando se solicite instalar el complemento adicional.</p>
+
+    <img src="img/docflow_paso2.png" class="step-img" id="df3">
+    <button id="df3-btn" class="btn-img-toggle" onclick="toggleStepImage('df3')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Instalación Imaging for Windows</h4>
+    <p>Esperar carga inicial → presionar <strong>Siguiente</strong>, luego <strong>YES</strong>, y nuevamente <strong>Next</strong> respetando la ruta por defecto.</p>
+
+    <img src="img/docflow_paso4.png" class="step-img" id="df4">
+    <button id="df4-btn" class="btn-img-toggle" onclick="toggleStepImage('df4')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Finalizar Instalación</h4>
+    <p>Cuando el instalador solicite seleccionar <strong>NO</strong> en la ventana final, presionar <strong>NO</strong> y luego <strong>Finalizar</strong>.</p>
+
+    <img src="img/docflow_paso5.png" class="step-img" id="df5">
+    <button id="df5-btn" class="btn-img-toggle" onclick="toggleStepImage('df5')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Copiar ejecutables finales</h4>
+    <p>Desde la carpeta:</p>
+    <p class="highlight-text">Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Aplicaciones Corporativas\Docflow</p>
+
+    <p>Copiar los archivos:</p>
+    <ul>
+      <li><strong>DOCFLOW.exe</strong></li>
+      <li><strong>LDPE5G.exe</strong></li>
+    </ul>
+
+    <p>A la ruta:</p>
+    <p class="highlight-text">C:\Archivos de programa\Tecnologia y Servicios\Docflow 5\</p>
+
+    <img src="img/docflow_paso6.png" class="step-img" id="df6">
+    <button id="df6-btn" class="btn-img-toggle" onclick="toggleStepImage('df6')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 7 -->
+  <div class="procedure-step">
+    <h4>Paso 7: Crear acceso directo</h4>
+    <p>Crear acceso directo en el escritorio de <strong>DOCFLOW.exe</strong>.</p>
+  </div>
+
+
+</section>
+
+
+<!-- ============================== -->
+<!--     LAN MESSENGER – SISTEMA   -->
+<!-- ============================== -->
+
+<section id="lanmessenger" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>Lan Messenger – Mensajería Interna PJUD</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial de instalación y configuración de 
+    <strong>Lan Messenger</strong>, utilizado por funcionarios del Poder Judicial
+    para comunicación interna y transferencia de archivos.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Descargar instalador desde NAS</h4>
+    <p>Ir a la siguiente ruta:</p>
+    <p class="highlight-text">
+      Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Aplicaciones Corporativas\lanChat
+    </p>
+
+    <p>Ejecutar <strong>lanmsngr.exe</strong>.</p>
+
+    <img src="img/lan_paso1.png" class="step-img" id="lan1">
+    <button id="lan1-btn" class="btn-img-toggle" onclick="toggleStepImage('lan1')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Ejecutar instalador</h4>
+    <p>Seleccionar <strong>Run</strong> o <strong>Ejecutar</strong>.</p>
+
+    <img src="img/lan_paso2.png" class="step-img" id="lan2">
+    <button id="lan2-btn" class="btn-img-toggle" onclick="toggleStepImage('lan2')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Completar instalación</h4>
+    <p>Avanzar con <strong>Siguiente → Siguiente → Instalar</strong>.</p>
+
+    <img src="img/lan_paso3.png" class="step-img" id="lan3">
+    <button id="lan3-btn" class="btn-img-toggle" onclick="toggleStepImage('lan3')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Iniciar Lan Messenger</h4>
+    <p>Seleccionar <strong>Iniciar Lan Messenger</strong> antes de finalizar el instalador.</p>
+
+    <img src="img/lan_paso4.png" class="step-img" id="lan4">
+    <button id="lan4-btn" class="btn-img-toggle" onclick="toggleStepImage('lan4')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Verificar estado del usuario</h4>
+    <p>En la ventana principal confirmar que el estado aparece como <strong>Disponible</strong>.</p>
+
+    <img src="img/lan_paso5.png" class="step-img" id="lan5">
+    <button id="lan5-btn" class="btn-img-toggle" onclick="toggleStepImage('lan5')">Mostrar imagen</button>
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento LAN Messenger (PDF)</h4>
+    <a href="/mnt/data/Procedimiento Lan messenger.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;">
+       Descargar Procedimiento LAN Messenger
+    </a>
+  </div>
+
+</section>
+
+
+
+<!-- ============================== -->
+<!--        SISTEMA SIGPER          -->
+<!-- ============================== -->
+
+<section id="sigper" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>SIGPER – Sistema de Gestión de Personal</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para configuración, habilitación de complementos, instalación de Chrome Portable 
+    y validación de funcionamiento del sistema corporativo <strong>SIGPER</strong>.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>PASO 1: Ejecutar acceso directo SIGPER</h4>
+    <p>
+      Luego de ejecutar el archivo <strong>Configuración V12</strong>, en el escritorio debe encontrarse 
+      el acceso directo <strong>SIGPER</strong>.  
+      Haga doble clic para abrirlo.
+    </p>
+
+    <img src="img/sigper_1.png" alt="Acceso directo SIGPER" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>PASO 2: Habilitar complementos en Internet Explorer</h4>
+    <p>
+      El sistema abrirá Internet Explorer. Debe ingresar a:
+    </p>
+
+    <ul>
+      <li>Herramientas → Administrar complementos</li>
+      <li>Verificar que <strong>Java</strong> esté habilitado</li>
+      <li>Habilitar todos los complementos disponibles</li>
+    </ul>
+
+    <img src="img/sigper_2.png" alt="Habilitar complementos IE" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>PASO 3: Configurar ActiveX y Seguridad</h4>
+    <p>
+      Luego debe revisar opciones de seguridad:
+    </p>
+
+    <ul>
+      <li>Herramientas → Opciones de Internet</li>
+      <li>Pestaña Seguridad → Sitios de Confianza</li>
+      <li>Habilitar todas las funciones de ActiveX y automatización</li>
+    </ul>
+
+    <img src="img/sigper_3.png" alt="Opciones de seguridad IE" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>PASO 4: Ingreso al Sistema SIGPER</h4>
+    <p>
+      Una vez configurado IE, vuelva a la pantalla inicial e ingrese con sus credenciales institucionales.
+    </p>
+
+    <img src="img/sigper_4.png" alt="Ingreso SIGPER" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>PASO 5: Instalación Chrome Portable compatible con SIGPER</h4>
+    <p>Descargar desde el NAS:</p>
+
+    <p class="highlight-text">
+      Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\Chrome Portable
+    </p>
+
+    <p>
+      Copiar el archivo ZIP y pegarlo en:
+      <strong>C:\Soporte</strong>, luego extraerlo.
+    </p>
+
+    <img src="img/sigper_5.png" alt="Chrome portable SIGPER" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>PASO 6: Usar Chrome Portable exclusivo para SIGPER</h4>
+    <p>
+      Chrome portable posee compatibilidad especial, incluyendo Adobe Flash Player para SIGPER.<br>
+      Debe ingresar mediante el siguiente enlace:
+    </p>
+
+    <p class="highlight-text">
+      http://zsigprod01.cadm.pjud/sigperwebx-prod/servlet/hlogin
+    </p>
+
+    <p>Se recomienda anclarlo a la barra de tareas.</p>
+
+    <img src="img/sigper_6.png" alt="Acceso Chrome portable SIGPER" style="width:100%; border-radius:8px; margin-top:10px;">
+  </div>
+
+  <!-- PASO 7 -->
+  <div class="procedure-step">
+    <h4>PASO 7: Crear acceso directo y pruebas con el usuario</h4>
+    <p>
+      Finalmente, se debe verificar junto al usuario que los módulos carguen correctamente y 
+      crear acceso directo en el escritorio.
+    </p>
+  </div>
+
+
+</section>
+
+
+
+<section id="rhred" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">← Volver a Sistemas Judiciales</button>
+
+  <h2>RHRED – Sistema de Recursos Humanos del Poder Judicial</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    El Sistema RHRED es la plataforma institucional del Poder Judicial destinada a la administración,
+    consulta y gestión de información sobre funcionarios, contratos, asistencia y documentación interna.
+    Esta guía está basada íntegramente en el procedimiento oficial entregado en PDF.
+  </p>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Ingresar al Sistema RHRED</h4>
+    <p>
+      Abrir Google Chrome y dirigirse al enlace oficial:
+    </p>
+
+    <p class="highlight-text">
+      http://zsigprod06.cadm.pjud/suitesrh/servlet/com.suite.login
+    </p>
+
+    <img src="img/rhred_paso1.png" alt="Ingreso RHRED" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Configuración de sitios y permisos</h4>
+    <p>
+      Según el documento oficial, RHRED requiere permisos especiales dentro de Chrome 
+      para permitir la correcta visualización de información.
+    </p>
+
+    <p>
+      Verificar en:
+    </p>
+
+    <ul>
+      <li>Configuración del sitio</li>
+      <li>Permitir contenido no seguro</li>
+      <li>Permitir descargas</li>
+      <li>Habilitar ventanas emergentes</li>
+    </ul>
+
+    <img src="img/rhred_paso2.png" alt="Permisos RHRED" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Configurar apertura de PDF en Chrome</h4>
+    <p>
+      RHRED utiliza documentos PDF que deben abrirse directamente en el navegador.
+      Para evitar errores se debe activar:
+    </p>
+
+    <p class="highlight-text">
+      Abrir archivos PDF en Chrome (segunda opción)
+    </p>
+
+    <img src="img/rhred_paso3.png" alt="Configuración PDF Chrome" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Pruebas finales con usuario</h4>
+    <p>
+      Luego de aplicar toda la configuración:
+    </p>
+
+    <ul>
+      <li>Cerrar sesión en RHRED</li>
+      <li>Volver a ingresar con el usuario</li>
+      <li>Abrir un documento PDF desde RHRED</li>
+    </ul>
+
+    <p>
+      **Debe abrir correctamente en Chrome sin bloqueos.**
+    </p>
+
+    <img src="img/rhred_paso4.png" alt="Pruebas de apertura PDF en RHRED" style="width:100%;border-radius:8px;margin-top:10px;">
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial PDF</h4>
+    <a href="/mnt/data/Procedimiento RHRED Sistema de recursos humanos.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Procedimiento RHRED (PDF)
+    </a>
+  </div>
+
+
+</section>
+
+
+<section id="zimbravip" class="content-section">
+  <button class="back-button" onclick="showSection('sistemas-judiciales')">
+    ← Volver a Sistemas Judiciales
+  </button>
+
+  <h2>Zimbra VIP – Actualización de Conector y Autocompletar</h2>
+
+  <p style="margin-bottom:1.5rem;">
+    Procedimiento oficial para actualizar el conector de Zimbra en Outlook, 
+    respaldar los datos del buzón y restaurar el autocompletar de correo.
+  </p>
+
+  <div class="procedure-step">
+    <h4>Resumen de pasos</h4>
+    <ul>
+      <li>1) Revisar si Outlook/Zimbra es 32 o 64 bits, perfiles y ruta de archivos de datos.</li>
+      <li>2) Descargar e instalar el nuevo Zimbra Outlook Connector (32 o 64 bits).</li>
+      <li>3) Cambiar extensión del archivo .ZDB a .PST y de .idm a .BAK.</li>
+      <li>4) Respaldar archivo de autocompletar de Outlook (varias copias).</li>
+      <li>5) Eliminar la cuenta actual de Zimbra en Outlook (solo después de respaldar).</li>
+      <li>6) Crear nuevamente la cuenta Zimbra (nuevo servidor, mismos datos de usuario).</li>
+      <li>7) Sincronizar la nueva cuenta y restaurar el autocompletar.</li>
+      <li>8) Generar archivo de autocompletar nuevo.</li>
+      <li>9) Reemplazar el archivo nuevo por una de las copias antiguas y probar.</li>
+    </ul>
+  </div>
+
+  <!-- PASO 1 -->
+  <div class="procedure-step">
+    <h4>Paso 1: Revisar 32/64 bits, perfiles y archivo de datos</h4>
+    <p>
+      Abrir <strong>Panel de control → Correo</strong> y comprobar si Outlook muestra 
+      indicador de <strong>32 bits</strong> (si dice “32 bits”) o de <strong>64 bits</strong> 
+      (cuando no indica nada).
+    </p>
+    <p>
+      Desde el mismo cuadro abrir <strong>Perfiles</strong> y validar que exista un 
+      perfil claro de Zimbra. Luego entrar a 
+      <strong>Cuentas de correo electrónico</strong> y confirmar que hay una cuenta 
+      MAPI de Zimbra establecida como predeterminada.
+    </p>
+    <p>
+      En la pestaña <strong>Archivos de datos</strong> verificar que existe un 
+      archivo de datos <strong>.ZDB</strong> asociado a la cuenta. Tomar nota de 
+      la ruta completa de ese archivo, ya que será el respaldo principal.
+    </p>
+    <p><strong>Importante:</strong> si no hay un perfil claramente definido o la 
+      cuenta MAPI no está clara, detener el procedimiento y derivar a nivel central.</p>
+
+    <img src="img/zimbra_paso1.png" class="step-img" id="zv1">
+    <button id="zv1-btn" class="btn-img-toggle" onclick="toggleStepImage('zv1')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="procedure-step">
+    <h4>Paso 2: Descargar e instalar Zimbra Outlook Connector 8.8.7</h4>
+    <p>
+      Descargar el conector según la arquitectura detectada en el paso anterior:
+    </p>
+    <ul>
+      <li>
+        <strong>64 bits:</strong><br>
+        <span class="highlight-text">
+          https://files.zimbra.com/downloads/zco/8.8.7/1739/ZimbraConnectorOLK_8.8.7.1739_x64.msi
+        </span>
+      </li>
+      <li>
+        <strong>32 bits:</strong><br>
+        <span class="highlight-text">
+          https://files.zimbra.com/downloads/zco/8.8.7/1739/ZimbraConnectorOLK_8.8.7.1739_x86.msi
+        </span>
+      </li>
+    </ul>
+    <p>
+      Ejecutar el instalador correspondiente, aceptar el contrato de licencia y seguir el asistente 
+      hasta finalizar.
+    </p>
+    <p>
+      Si el instalador muestra advertencias de procesos abiertos (por ejemplo, ventana de 
+      “Correo” aún abierta), cerrar todas las ventanas indicadas y reintentar hasta que la 
+      instalación concluya correctamente.
+    </p>
+
+    <img src="img/zimbra_paso2.png" class="step-img" id="zv2">
+    <button id="zv2-btn" class="btn-img-toggle" onclick="toggleStepImage('zv2')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="procedure-step">
+    <h4>Paso 3: Cambiar extensión del archivo .ZDB y archivos .idm</h4>
+    <p>
+      Ir a la carpeta donde se encuentra el archivo <strong>.ZDB</strong> anotado en el paso 1.
+    </p>
+    <ul>
+      <li>Ubicar el archivo de datos principal de Zimbra (extensión <strong>.ZDB</strong>).</li>
+      <li>Cambiar su nombre agregando la extensión <strong>.PST</strong> 
+        (por ejemplo: <code>Zimbra1.zdb</code> → <code>Zimbra1.zdb.pst</code>).</li>
+      <li>En la misma carpeta localizar los archivos con extensión <strong>.idm</strong> 
+        y agregarles la extensión <strong>.bak</strong> 
+        (por ejemplo: <code>Zimbra1.idm</code> → <code>Zimbra1.idm.bak</code>).</li>
+    </ul>
+
+    <img src="img/zimbra_paso3.png" class="step-img" id="zv3">
+    <button id="zv3-btn" class="btn-img-toggle" onclick="toggleStepImage('zv3')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 4 -->
+  <div class="procedure-step">
+    <h4>Paso 4: Respaldar archivo de Autocompletar</h4>
+    <p>
+      Localizar el archivo de autocompletar de Outlook 
+      <strong>Stream_Autocomplete_x_xx… .DAT</strong>. 
+      Este archivo se encuentra en:
+    </p>
+    <p class="highlight-text">
+      C:\Users\&lt;usuario&gt;\AppData\Local\Microsoft\Outlook\RoamCache
+    </p>
+    <p>
+      Una forma rápida es abrir el menú Inicio, escribir <strong>%appdata%</strong> 
+      y presionar Enter. Desde la carpeta <strong>Roaming</strong> subir un nivel a 
+      <strong>AppData</strong> y luego entrar en 
+      <strong>Local → Microsoft → Outlook → RoamCache</strong>.
+    </p>
+    <p>
+      Identificar el archivo <strong>Stream_Autocomplete_… .DAT</strong> de mayor tamaño y 
+      generar varias copias en el mismo directorio (Ctrl+C, Ctrl+V varias veces) para tener 
+      respaldos.
+    </p>
+
+    <img src="img/zimbra_paso4.png" class="step-img" id="zv4">
+    <button id="zv4-btn" class="btn-img-toggle" onclick="toggleStepImage('zv4')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 5 -->
+  <div class="procedure-step">
+    <h4>Paso 5: Eliminar la cuenta actual de Zimbra en Outlook</h4>
+    <p>
+      Este paso solo debe ejecutarse después de haber cambiado la extensión del ZDB y 
+      respaldado el autocompletar. Borrar la cuenta sin estos respaldos elimina el archivo 
+      ZDB y sus asociados.
+    </p>
+    <ul>
+      <li>Abrir nuevamente <strong>Panel de control → Correo</strong>.</li>
+      <li>Entrar a <strong>Cuentas de correo electrónico</strong>, seleccionar la cuenta MAPI de Zimbra.</li>
+      <li>Presionar <strong>Quitar</strong> y aceptar las advertencias.</li>
+    </ul>
+    <p>
+      Si Outlook indica que no hay otro archivo de datos (cuando solo existía el ZDB), 
+      crear primero un nuevo archivo de datos <strong>.PST</strong>, asignarlo y luego repetir 
+      la eliminación de la cuenta de Zimbra.
+    </p>
+
+    <img src="img/zimbra_paso5.png" class="step-img" id="zv5">
+    <button id="zv5-btn" class="btn-img-toggle" onclick="toggleStepImage('zv5')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 6 -->
+  <div class="procedure-step">
+    <h4>Paso 6: Crear nuevamente la cuenta Zimbra (nuevo conector)</h4>
+    <p>
+      En el mismo cuadro de Cuentas de correo electrónico, elegir <strong>Nuevo…</strong>.
+    </p>
+    <ul>
+      <li>Seleccionar <strong>Cuenta → Otros → Zimbra Collaboration Server</strong>.</li>
+      <li>Elegir <strong>Configuración manual</strong>.</li>
+      <li>En la ventana de configuración de Zimbra, completar los campos con los mismos 
+        datos de usuario (dirección de correo, contraseña) pero usando el servidor que 
+        corresponda a la nueva plataforma.</li>
+    </ul>
+    <p>
+      En las opciones avanzadas, definir la carpeta donde se guardará el nuevo perfil, 
+      idealmente en la misma ubicación donde se encontraba el Zimbra anterior o en una 
+      ruta clara dentro de <strong>Disco D:</strong> (datos).
+    </p>
+    <p>
+      Aplicar los cambios y finalizar el asistente.
+    </p>
+
+    <img src="img/zimbra_paso6.png" class="step-img" id="zv6">
+    <button id="zv6-btn" class="btn-img-toggle" onclick="toggleStepImage('zv6')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 7 -->
+  <div class="procedure-step">
+    <h4>Paso 7: Sincronizar nueva cuenta</h4>
+    <p>
+      Abrir <strong>Outlook</strong> con la nueva cuenta de Zimbra configurada y dejar que 
+      comience el proceso de sincronización (descarga de buzón).
+    </p>
+    <p>
+      Aceptar todos los mensajes que Outlook presente durante el primer inicio después 
+      del cambio de conector.
+    </p>
+
+    <img src="img/zimbra_paso7.png" class="step-img" id="zv7">
+    <button id="zv7-btn" class="btn-img-toggle" onclick="toggleStepImage('zv7')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 8 -->
+  <div class="procedure-step">
+    <h4>Paso 8: Generar nuevo archivo de Autocompletar</h4>
+    <p>
+      Cerrar Outlook y confirmar en el Administrador de tareas que el proceso 
+      <strong>OUTLOOK.EXE</strong> ya no está en ejecución. No finalizarlo manualmente.
+    </p>
+    <p>
+      Volver a abrir Outlook y enviar un correo de prueba a cualquier dirección 
+      (por ejemplo: <code>usuario@pjud.cl</code>). Al terminar, cerrar nuevamente Outlook 
+      y esperar a que el proceso se detenga por completo.
+    </p>
+    <p>
+      Regresar a la carpeta de autocompletar 
+      <strong>RoamCache</strong> y verificar que se haya creado un nuevo archivo 
+      <strong>Stream_Autocomplete_… .DAT</strong> de tamaño pequeño (correspondiente al 
+      nuevo perfil).
+    </p>
+
+    <img src="img/zimbra_paso8.png" class="step-img" id="zv8">
+    <button id="zv8-btn" class="btn-img-toggle" onclick="toggleStepImage('zv8')">Mostrar imagen</button>
+  </div>
+
+  <!-- PASO 9 -->
+  <div class="procedure-step">
+    <h4>Paso 9: Restaurar Autocompletar antiguo</h4>
+    <p>
+      Copiar el nombre exacto del archivo de autocompletar nuevo (el pequeño), 
+      eliminarlo y luego tomar una de las copias grandes realizadas en el paso 4.
+    </p>
+    <p>
+      Renombrar esa copia con el mismo nombre del archivo nuevo que se borró, de manera que 
+      el autocompletar antiguo quede asociado al perfil actual.
+    </p>
+    <p>
+      Abrir nuevamente Outlook y probar que las sugerencias de autocompletar aparecen 
+      correctamente. En caso de que no funcione, repetir el reemplazo utilizando otra de 
+      las copias del archivo.
+    </p>
+
+    <img src="img/zimbra_paso9.png" class="step-img" id="zv9">
+    <button id="zv9-btn" class="btn-img-toggle" onclick="toggleStepImage('zv9')">Mostrar imagen</button>
+  </div>
+
+  <!-- DESCARGA PDF -->
+  <div class="procedure-step optional-step">
+    <h4>Descargar Procedimiento Oficial Zimbra VIP (PDF)</h4>
+    <a href="/mnt/data/procedimiento Zimbra VIP.pdf" download
+       style="background:#0071c5;color:white;padding:10px 20px;border-radius:6px;display:inline-block;text-decoration:none;">
+       Descargar Procedimiento Zimbra VIP (PDF)
+    </a>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+   <section id="sistemas-judiciales" class="content-section">
+
+
+    <button class="back-button" onclick="showMain()">← Volver al Menú Principal</button>
+    <h2>Procedimientos Sistemas Judiciales</h2>
+    <h3>Sistemas Disponibles</h3>
+
+    <div class="system-grid">
+
+<div class="system-item" onclick="showSection('sitci')">
+  <h4>SITCI</h4>
+  <p>Sistema Civil</p>
+</div>
+
+<div class="system-item" onclick="showSection('sitco')">
+  <h4>SITCO</h4>
+  <p>Sistema de Cobranza</p>
+</div>
+
+<div class="system-item" onclick="showSection('sitla')">
+  <h4>SITLA</h4>
+  <p>Sistema Laboral</p>
+</div>
+
+<div class="system-item" onclick="showSection('siagj')">
+  <h4>SIAGJ</h4>
+  <p>Sistema Reforma Procesal Penal</p>
+</div>
+
+<div class="system-item" onclick="showSection('gestion-penal')">
+  <h4>Gestión Penal</h4>
+  <p>Sistema Judicial Penal</p>
+</div>
+
+<div class="system-item" onclick="showSection('sitfa')">
+  <h4>SITFA</h4>
+  <p>Sistema Judicial Familia</p>
+</div>
+
+<div class="system-item" onclick="showSection('monitoweb2')">
+  <h4>Monito Web 2</h4>
+  <p>Sistema de Certificados del Registro Civil</p>
+</div>
+
+
+<div class="system-item" onclick="showSection('docflow')">
+  <h4>Docflow</h4>
+  <p>Sistema de Digitalización y Gestión Documental</p>
+</div>
+
+
+<div class="system-item" onclick="showSection('lanmessenger')">
+  <h4>Lan Messenger</h4>
+  <p>Mensajería interna (Chat corporativo)</p>
+</div>
+
+
+<div class="system-item" onclick="showSection('sigper')">
+  <h4>SIGPER</h4>
+  <p>Sistema de Gestión de Personal del Poder Judicial</p>
+</div>
+
+
+<div class="system-item" onclick="showSection('rhred')">
+  <h4>RHRED</h4>
+  <p>Sistema de Recursos Humanos</p>
+</div>
+
+<div class="system-item" onclick="showSection('zimbravip')">
+  <h4>Zimbra VIP</h4>
+  <p>Correo institucional VIP</p>
+</div>
+
+
+
+
+
+</div>
+
+
+    <h3>Procedimientos Técnicos</h3>
+    <div class="procedure-list">
+     <div class="procedure-item">
+      <div class="procedure-header" onclick="toggleProcedure('proc1')">
+        <span class="procedure-title">Configuración de Perfil (.BAT)</span>
+        <span class="procedure-icon">▼</span>
+      </div>
+
+  <div id="proc1" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p><strong>Descripción:</strong> Este procedimiento detalla los pasos obligatorios para la configuración estandarizada de estaciones de trabajo PJUD4, garantizando la correcta operación y compatibilidad con sistemas judiciales que dependen de Internet Explorer 11 y Java versión 231.</p>
+    </div>
+
+    <div class="procedure-scope">
+      <h4>El proceso automatizado cubre las siguientes áreas:</h4>
+      <ul>
+        <li><strong>Seguridad en IE:</strong> Ajustes de seguridad relajados, incluyendo Sitios de Confianza y ActiveX.</li>
+        <li><strong>Optimización de Windows:</strong> Parámetros de rendimiento (Energía) y desactivación del Control de Cuentas de Usuario (UAC).</li>
+        <li><strong>Conectividad:</strong> Configuración de acceso a la red judicial (DNS y Proxy) según la ubicación del usuario.</li>
+        <li><strong>Soporte:</strong> Activación de herramientas de soporte como la Cuenta Administrador y Monito web 2.</li>
+      </ul>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Acceder al Repositorio</h4>
+      <p>Ingresar a <strong>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\CONFIGURACION 2025</strong> y copiarlo a Disco Local C.</p>
+
+      <button id="img-paso1-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso1')">Mostrar imagen</button>
+      <img id="img-paso1" class="step-img" src="img/cfg_paso1.png" alt="Paso 1">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar el Archivo de Configuración</h4>
+      <p>Ejecutar <strong>CFG_PJUD4.bat</strong> con permisos de administrador.</p>
+
+      <button id="img-paso2-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso2')">Mostrar imagen</button>
+      <img id="img-paso2" class="step-img" src="img/cfg_paso2.png" alt="Paso 2">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Confirmar Ejecución</h4>
+      <p>Aparecerá un mensaje de seguridad. Presionar <strong>Enter</strong> para continuar.</p>
+
+      <button id="img-paso3-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso3')">Mostrar imagen</button>
+      <img id="img-paso3" class="step-img" src="img/cfg_paso3.png" alt="Paso 3">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Seleccionar Tipo de Configuración</h4>
+      <p>Seleccionar opción <strong>1</strong> y marcar “Eliminar Configuración Personal”.</p>
+
+      <button id="img-paso4-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso4')">Mostrar imagen</button>
+      <img id="img-paso4" class="step-img" src="img/cfg_paso4.png" alt="Paso 4">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Configurar Ubicación y Proxy</h4>
+      <p>Seleccionar <strong>Tribunal</strong>, omitir Monito Web si no corresponde, y elegir el proxy adecuado.</p>
+
+      <button id="img-paso5-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso5')">Mostrar imagen</button>
+      <img id="img-paso5" class="step-img" src="img/cfg_paso5.png" alt="Paso 5">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6: Instalar Librerías y Registros</h4>
+      <p>Se instalarán librerías DLL y registros necesarios. Seleccionar <strong>Aceptar</strong> en cada ventana.</p>
+
+      <button id="img-paso6-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso6')">Mostrar imagen</button>
+      <img id="img-paso6" class="step-img" src="img/cfg_paso6.png" alt="Paso 6">
+    </div>
+
+    <!-- PASO 7 -->
+    <div class="procedure-step">
+      <h4>Paso 7: Instalar AmiOffice V3</h4>
+      <p>Seleccionar <strong>1) Instalar</strong> y aceptar todas las ventanas emergentes.</p>
+
+      <button id="img-paso7-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso7')">Mostrar imagen</button>
+      <img id="img-paso7" class="step-img" src="img/cfg_paso7.png" alt="Paso 7">
+    </div>
+
+    <!-- PASO 8 -->
+    <div class="procedure-step optional-step">
+      <h4>Paso 8: Instalación de Plugins</h4>
+      <p>Se instalan complementos adicionales para compatibilidad completa.</p>
+
+      <button id="img-paso8-btn" class="btn-img-toggle" onclick="toggleStepImage('img-paso8')">Mostrar imagen</button>
+      <img id="img-paso8" class="step-img" src="img/cfg_paso8.png" alt="Paso 8">
+    </div>
+
+  </div>
+</div>
+
+     </div>
+
+     <div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('proc2')">
+    <span class="procedure-title">Procedimiento Solución Módulo Agenda (SIAGJ)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+  <div id="proc2" class="procedure-content">
+     
+
+    <div class="procedure-intro">
+  <p>
+    Este procedimiento soluciona errores del módulo Agenda de SIAGJ mediante carga 
+    de librerías y registro manual de MSCOMCTL.OCX, según documento oficial.
+  </p>
+</div>
+
+<!-- PASO 1 -->
+<div class="procedure-step">
+  <h4>Paso 1: Acceder al Repositorio NAS</h4>
+  <p>
+    Dirígete a la siguiente ruta en el NAS:
+  </p>
+  <p class="highlight-text">
+    Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\SIAGJ SOLUCION DE AGENDA
+  </p>
+
+  <button id="agenda1-btn" class="link-button" onclick="toggleStepImage('agenda1')">Mostrar imagen</button>
+  <img id="agenda1" src="img/agenda_paso1.png" style="display:none;width:100%;margin-top:10px;border-radius:8px;">
+</div>
+
+<!-- PASO 2 -->
+<div class="procedure-step">
+  <h4>Paso 2: Copiar archivo MSCOMCTL.OCX</h4>
+  <p>
+    Copiar el archivo <strong>MSCOMCTL.OCX</strong> dentro de:
+  </p>
+  <p class="highlight-text">C:\Windows\SysWOW64</p>
+
+  <button id="agenda2-btn" class="link-button" onclick="toggleStepImage('agenda2')">Mostrar imagen</button>
+  <img id="agenda2" src="img/agenda_paso2.png" style="display:none;width:100%;margin-top:10px;border-radius:8px;">
+</div>
+
+<!-- PASO 3 -->
+<div class="procedure-step">
+  <h4>Paso 3: Abrir CMD como Administrador</h4>
+  <p>
+    Presiona tecla Windows → escribe <strong>cmd</strong> → clic derecho → 
+    <strong>Ejecutar como administrador</strong>.
+  </p>
+
+  <button id="agenda3-btn" class="link-button" onclick="toggleStepImage('agenda3')">Mostrar imagen</button>
+  <img id="agenda3" src="img/agenda_paso3.png" style="display:none;width:100%;margin-top:10px;border-radius:8px;">
+</div>
+
+<!-- PASO 4 -->
+<div class="procedure-step">
+  <h4>Paso 4: Registrar la librería MSCOMCTL.OCX</h4>
+  <p>En la consola, escribe el siguiente comando:</p>
+
+  <p class="highlight-text">regsvr32 C:\Windows\SysWOW64\MSCOMCTL.OCX</p>
+
+  <button id="agenda4-btn" class="link-button" onclick="toggleStepImage('agenda4')">Mostrar imagen</button>
+  <img id="agenda4" src="img/agenda_paso4.png" style="display:none;width:100%;margin-top:10px;border-radius:8px;">
+</div>
+
+<!-- PASO 5 -->
+<div class="procedure-step">
+  <h4>Paso 5: Confirmación de Registro</h4>
+  <p>
+    Si todo fue correcto, aparecerá un mensaje indicando que el archivo ha sido registrado correctamente.
+  </p>
+
+  <button id="agenda5-btn" class="link-button" onclick="toggleStepImage('agenda5')">Mostrar imagen</button>
+  <img id="agenda5" src="img/agenda_paso5.png" style="display:none;width:100%;margin-top:10px;border-radius:8px;">
+</div>
+
+
+
+  </div>
+</div>
+
+     <div class="procedure-item">
+      <div class="procedure-header" onclick="toggleProcedure('proc3')">
+        <span class="procedure-title">Procedimiento Reconfiguración de Perfil (Perfilazo)</span>
+        <span class="procedure-icon">▼</span>
+      </div>
+      <div id="proc3" class="procedure-content">
+        <div class="procedure-intro">
+  <p>
+    Procedimiento oficial para reconfigurar completamente el perfil de usuario (“Perfilazo”),
+    restaurando estructura de carpetas, registro y configuración asociada.  
+    Basado en el documento original entregado por Mesa de Ayuda HP.
+  </p>
+</div>
+
+<!-- PASO 1 -->
+<div class="procedure-step">
+  <h4>Paso 1: Abrir Panel de Control</h4>
+  <p>
+    Acceder a Panel de Control y escribir “Mail” para abrir Configuración de Correo.
+  </p>
+
+  <button id="pf1-btn" class="btn-img-toggle" onclick="toggleStepImage('pf1')">Mostrar imagen</button>
+  <img id="pf1" class="step-img" src="img/perfilazo_paso1.png" alt="Paso 1">
+</div>
+
+<!-- PASO 2 -->
+<div class="procedure-step">
+  <h4>Paso 2: Cuentas de correo</h4>
+  <p>
+    Abrir “Cuentas de correo electrónico” y seleccionar la cuenta del usuario.
+  </p>
+
+  <button id="pf2-btn" class="btn-img-toggle" onclick="toggleStepImage('pf2')">Mostrar imagen</button>
+  <img id="pf2" class="step-img" src="img/perfilazo_paso2.png" alt="Paso 2">
+</div>
+
+<!-- PASO 3 -->
+<div class="procedure-step">
+  <h4>Paso 3: Usar herramienta Revealer</h4>
+  <p>
+    Desde el NAS abrir Revealer para obtener la contraseña del correo.
+  </p>
+
+  <button id="pf3-btn" class="btn-img-toggle" onclick="toggleStepImage('pf3')">Mostrar imagen</button>
+  <img id="pf3" class="step-img" src="img/perfilazo_paso3.png" alt="Paso 3">
+</div>
+
+<!-- PASO 4 -->
+<div class="procedure-step">
+  <h4>Paso 4: Guardar contraseña y revisar ubicación del PST</h4>
+  <p>
+    Volver a Configuración de correo → Archivos de datos → revisar ruta del PST.
+  </p>
+
+  <button id="pf4-btn" class="btn-img-toggle" onclick="toggleStepImage('pf4')">Mostrar imagen</button>
+  <img id="pf4" class="step-img" src="img/perfilazo_paso4.png" alt="Paso 4">
+</div>
+
+<!-- PASO 5 -->
+<div class="procedure-step">
+  <h4>Paso 5: Configurar cuenta Administrador</h4>
+  <p>
+    Abrir Administración de equipos → Usuarios y grupos locales → cambiar contraseña del Administrador.
+  </p>
+
+  <button id="pf5-btn" class="btn-img-toggle" onclick="toggleStepImage('pf5')">Mostrar imagen</button>
+  <img id="pf5" class="step-img" src="img/perfilazo_paso5.png" alt="Paso 5">
+</div>
+
+<!-- PASO 6 -->
+<div class="procedure-step">
+  <h4>Paso 6: Ingresar a la cuenta Administrador</h4>
+  <p>
+    Cerrar sesión e ingresar con usuario: <strong>Administrador</strong> y clave establecida.
+  </p>
+
+  <button id="pf6-btn" class="btn-img-toggle" onclick="toggleStepImage('pf6')">Mostrar imagen</button>
+  <img id="pf6" class="step-img" src="img/perfilazo_paso6.png" alt="Paso 6">
+</div>
+
+<!-- PASO 7 -->
+<div class="procedure-step">
+  <h4>Paso 7: Renombrar carpeta del usuario</h4>
+  <p>
+    Ir a C:\Usuarios → Renombrar carpeta del usuario agregando <strong>.old</strong>.
+  </p>
+
+  <button id="pf7-btn" class="btn-img-toggle" onclick="toggleStepImage('pf7')">Mostrar imagen</button>
+  <img id="pf7" class="step-img" src="img/perfilazo_paso7.png" alt="Paso 7">
+</div>
+
+<!-- PASO 8 -->
+<div class="procedure-step">
+  <h4>Paso 8: Generar nuevo perfil desde Internet Explorer</h4>
+  <p>
+    Con tecla SHIFT presionada → clic derecho en IE → “Ejecutar como otro usuario”.
+  </p>
+
+  <button id="pf8-btn" class="btn-img-toggle" onclick="toggleStepImage('pf8')">Mostrar imagen</button>
+  <img id="pf8" class="step-img" src="img/perfilazo_paso8.png" alt="Paso 8">
+</div>
+
+<!-- PASO 9 -->
+<div class="procedure-step">
+  <h4>Paso 9: Verificar creación de carpeta TEMP y nuevo usuario</h4>
+  <p>
+    En C:\Usuarios deben aparecer las carpetas: usuario nuevo + TEMP.
+  </p>
+
+  <button id="pf9-btn" class="btn-img-toggle" onclick="toggleStepImage('pf9')">Mostrar imagen</button>
+  <img id="pf9" class="step-img" src="img/perfilazo_paso9.png" alt="Paso 9">
+</div>
+
+<!-- PASO 10 -->
+<div class="procedure-step">
+  <h4>Paso 10: Editar Registro</h4>
+  <p>
+    Abrir Regedit → ir a:  
+    <span class="highlight-text">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</span>  
+    → eliminar la clave que termina en <strong>.bak</strong>.
+  </p>
+
+  <button id="pf10-btn" class="btn-img-toggle" onclick="toggleStepImage('pf10')">Mostrar imagen</button>
+  <img id="pf10" class="step-img" src="img/perfilazo_paso10.png" alt="Paso 10">
+</div>
+
+<!-- PASO 11 -->
+<div class="procedure-step">
+  <h4>Paso 11: Ejecutar nuevamente IE como el usuario</h4>
+  <p>
+    Repetir: SHIFT + clic derecho → ejecutar como otro usuario.
+  </p>
+
+  <button id="pf11-btn" class="btn-img-toggle" onclick="toggleStepImage('pf11')">Mostrar imagen</button>
+  <img id="pf11" class="step-img" src="img/perfilazo_paso11.png" alt="Paso 11">
+</div>
+
+<!-- PASO 12 -->
+<div class="procedure-step">
+  <h4>Paso 12: Iniciar sesión con el usuario final</h4>
+  <p>
+    Cerrar sesión → seleccionar “Otro usuario” e ingresar con credenciales reales.
+  </p>
+
+  <button id="pf12-btn" class="btn-img-toggle" onclick="toggleStepImage('pf12')">Mostrar imagen</button>
+  <img id="pf12" class="step-img" src="img/perfilazo_paso12.png" alt="Paso 12">
+<div>
+</div> <!-- Cierra paso 12 -->
+</div> <!-- Cierra proc3 -->
+</div> <!-- Cierra procedure-item Perfilazo -->
+</div>
+
+
+
+<!-- ============================================================= -->
+<!--   PROCEDIMIENTO: FILETYPEMAN PARA SISTEMA SITCI               -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procFileTypeMan')">
+    <span class="procedure-title">Solución FileTypeMan – Problema de apertura en SITCI</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procFileTypeMan" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Este procedimiento permite corregir errores al abrir documentos en el 
+        <strong>Sistema Corporativo SITCI</strong>, ajustando las asociaciones de archivos 
+        mediante la herramienta <strong>FileTypeMan</strong>.
+      </p>
+      <p class="file-cite">📄 Documento original adjunto: Procedimiento FileTypeMan SITCI 
+        (Referencia interna) :contentReference[oaicite:0]{index=0}
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Abrir la herramienta FileTypeMan</h4>
+      <p>
+        Ingresar a la carpeta:
+        <br><strong>C:\Soporte\FileTypeMan</strong>  
+        <br>Si no existe, se encuentra en el NAS:
+        <br><strong>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\filetypesman</strong>
+      </p>
+      <p>Ejecutar el archivo <strong>.exe</strong> como Administrador.</p>
+
+      <button id="ftm1-btn" class="btn-img-toggle" onclick="toggleStepImage('ftm1')">Mostrar imagen</button>
+      <img id="ftm1" class="step-img" src="img/filetype_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Buscar extensiones de Word</h4>
+      <p>Presionar <strong>Ctrl + F</strong> y buscar las siguientes extensiones:</p>
+      <ul>
+        <li>.doc</li>
+        <li>.dot</li>
+        <li>.docx</li>
+      </ul>
+
+      <button id="ftm2-btn" class="btn-img-toggle" onclick="toggleStepImage('ftm2')">Mostrar imagen</button>
+      <img id="ftm2" class="step-img" src="img/filetype_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Configurar opciones recomendadas</h4>
+      <p>Dar doble clic a cada extensión y activar las siguientes opciones:</p>
+
+      <ul>
+        <li><strong>Open this file type immediately after download, without confirmation</strong></li>
+        <li><strong>Don’t open inside a Web browser window</strong></li>
+      </ul>
+
+      <button id="ftm3-btn" class="btn-img-toggle" onclick="toggleStepImage('ftm3')">Mostrar imagen</button>
+      <img id="ftm3" class="step-img" src="img/filetype_paso3.png" style="display:none;">
+    </div>
+
+    <!-- RECOMENDACIÓN FINAL -->
+    <div class="procedure-step">
+      <h4>Recomendación Final</h4>
+      <ul>
+        <li>Verificar que los documentos de SITCI ahora abren correctamente.</li>
+        <li>Realizar este procedimiento solo con permisos de Administrador.</li>
+        <li>Documentar los cambios realizados para auditorías o soporte.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================= -->
+<!--  PROCEDIMIENTO: BÚSQUEDA DE ARCHIVOS PST EN EQUIPOS           -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procPST')">
+    <span class="procedure-title">Procedimiento: Búsqueda de Archivos PST en Discos Locales</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procPST" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Este procedimiento permite buscar archivos <strong>PST</strong> en todos los discos del equipo,
+        utilizando el script oficial de Mesa de Ayuda HP. Útil para recuperación, reparación o respaldo
+        del correo Outlook.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Acceder al Repositorio NAS</h4>
+      <p>Ir a la ruta:</p>
+
+      <p class="highlight-text">
+        Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Herramientas optimizacion de mesa y otros\ Procedimiento Buscar PST.bat
+      </p>
+
+      <button id="pst1-btn" class="btn-img-toggle" onclick="toggleStepImage('pst1')">Mostrar imagen</button>
+      <img id="pst1" class="step-img" src="img/pst_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar el Script</h4>
+      <p>
+        Hacer clic derecho sobre <strong>Procedimiento Buscar PST.bat</strong> y seleccionar
+        <strong>Ejecutar como administrador</strong>.
+      </p>
+
+      <button id="pst2-btn" class="btn-img-toggle" onclick="toggleStepImage('pst2')">Mostrar imagen</button>
+      <img id="pst2" class="step-img" src="img/pst_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Interpretación de resultados</h4>
+      <p>
+        Si existen archivos PST, se mostrarán sus rutas exactas dentro de la ventana CMD.
+        Esta información permite identificar cuál corresponde al perfil del usuario o cuál es el más reciente.
+      </p>
+
+      <button id="pst3-btn" class="btn-img-toggle" onclick="toggleStepImage('pst3')">Mostrar imagen</button>
+      <img id="pst3" class="step-img" src="img/pst_paso3.png" style="display:none;">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Código del Script (Referencia)</h4>
+
+      <pre class="code-block">
+@echo off
+echo Buscando archivos PST en todos los discos y en la papelera de reciclaje...
+echo.
+echo Archivos encontrados en el disco C:
+dir C:\*.pst /s /b
+echo.
+echo Archivos encontrados en el disco D:
+dir D:\*.pst /s /b
+echo.
+echo Archivos encontrados en otros discos:
+for %%D in (E F G H I J K L M N O P Q R S T U V W X Y Z) do (
+ if exist %%D:\ (
+   echo.
+   echo Archivos encontrados en el disco %%D:
+   dir %%D:\*.pst /s /b
+ )
+)
+echo.
+pause
+      </pre>
+
+    </div>
+
+    <div class="procedure-step">
+      <p><strong>Nota:</strong> Se recomienda respaldar los PST antes de realizar reparaciones.</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- ============================================================= -->
+<!--  PROCEDIMIENTO: LIMPIEZA EXTREMA                             -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('limpiezaExtrema')">
+    <span class="procedure-title">Procedimiento Limpieza Extrema (Optimización del Sistema)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="limpiezaExtrema" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial de mantenimiento profundo del sistema, basado en el documento de 
+        limpieza extrema de Mesa de Ayuda HP. Incluye eliminación de temporales, optimización del sistema, 
+        SFC Scannow, DISM, habilitación de núcleos y ejecución de herramientas de memoria RAM.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Acceder a la ruta del procedimiento</h4>
+      <p>Ir a:</p>
+      <p class="highlight-text">Z:\REPOSITORIO MESA DE AYUDA\Repositorio\01.-Procedimientos mesa de ayuda\Procedimiento Limpieza actualizada</p>
+
+      <button id="limp1-btn" class="btn-img-toggle" onclick="toggleStepImage('limp1')">Mostrar imagen</button>
+      <img id="limp1" class="step-img" src="img/limpieza_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar como Administrador</h4>
+      <p>Dar permisos administrativos para poder ejecutar todas las funciones.</p>
+
+      <button id="limp2-btn" class="btn-img-toggle" onclick="toggleStepImage('limp2')">Mostrar imagen</button>
+      <img id="limp2" class="step-img" src="img/limpieza_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Seleccionar la Opción 1 (Recomendada)</h4>
+      <p>Inicia limpieza de temporales y ajustes de rendimiento.</p>
+
+      <button id="limp3-btn" class="btn-img-toggle" onclick="toggleStepImage('limp3')">Mostrar imagen</button>
+      <img id="limp3" class="step-img" src="img/limpieza_paso3.png" style="display:none;">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Limpieza de Temporales</h4>
+      <p>Se eliminarán archivos temporales de Windows y AppData.</p>
+
+      <button id="limp4-btn" class="btn-img-toggle" onclick="toggleStepImage('limp4')">Mostrar imagen</button>
+      <img id="limp4" class="step-img" src="img/limpieza_paso4.png" style="display:none;">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Ejecución de SFC /Scannow</h4>
+      <p>Analiza y repara archivos del sistema. Puede tardar varios minutos.</p>
+
+      <button id="limp5-btn" class="btn-img-toggle" onclick="toggleStepImage('limp5')">Mostrar imagen</button>
+      <img id="limp5" class="step-img" src="img/limpieza_paso5.png" style="display:none;">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6: Ejecución DISM /Restorehealth</h4>
+      <p>Repara la imagen del sistema. Recomendado ejecutarlo individualmente.</p>
+
+      <button id="limp6-btn" class="btn-img-toggle" onclick="toggleStepImage('limp6')">Mostrar imagen</button>
+      <img id="limp6" class="step-img" src="img/limpieza_paso6.png" style="display:none;">
+    </div>
+
+    <!-- PASO 7 -->
+    <div class="procedure-step">
+      <h4>Paso 7: Limpieza RAM (RamCleaner)</h4>
+      <p>Seleccionar limpieza básica para liberar memoria RAM.</p>
+
+      <button id="limp7-btn" class="btn-img-toggle" onclick="toggleStepImage('limp7')">Mostrar imagen</button>
+      <img id="limp7" class="step-img" src="img/limpieza_paso7.png" style="display:none;">
+    </div>
+
+    <!-- PASO 8 -->
+    <div class="procedure-step">
+      <h4>Paso 8: Deshabilitar servicios innecesarios</h4>
+      <p>Deshabilita WSearch, BITS, Sysmain y servicios de actualización.</p>
+
+      <button id="limp8-btn" class="btn-img-toggle" onclick="toggleStepImage('limp8')">Mostrar imagen</button>
+      <img id="limp8" class="step-img" src="img/limpieza_paso8.png" style="display:none;">
+    </div>
+
+    <!-- PASO 9 -->
+    <div class="procedure-step">
+      <h4>Paso 9: Limpieza de Prefetch</h4>
+      <p>Elimina archivos obsoletos para mejorar el rendimiento, Windows recreará la carpeta automáticamente.</p>
+
+      <button id="limp9-btn" class="btn-img-toggle" onclick="toggleStepImage('limp9')">Mostrar imagen</button>
+      <img id="limp9" class="step-img" src="img/limpieza_paso9.png" style="display:none;">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+    
+<!-- =============================================== -->
+<!--   PROCEDIMIENTO: SOLUCIÓN INTERNET EXPLORER     -->
+<!-- =============================================== -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procIE')">
+    <span class="procedure-title">Solución de Errores de Uso y Configuración en Internet Explorer</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procIE" class="procedure-content">
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Descargar Microsoft Edge</h4>
+      <p>Ingresar al sitio oficial de descarga:</p>
+
+      <p class="highlight-text">https://www.microsoft.com/es-es/edge/download</p>
+
+      <button id="ie1-btn" class="btn-img-toggle" onclick="toggleStepImage('ie1')">
+        Mostrar imagen
+      </button>
+      <img id="ie1" class="step-img" src="img/ie_paso1.png">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Instalar Microsoft Edge</h4>
+      <p>Ejecute el instalador descargado y continúe hasta finalizar.</p>
+
+      <button id="ie2-btn" class="btn-img-toggle" onclick="toggleStepImage('ie2')">
+        Mostrar imagen
+      </button>
+      <img id="ie2" class="step-img" src="img/ie_paso2.png">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Ejecutar script de restauración</h4>
+
+      <p class="highlight-text">
+        Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\Procedimiento Solucion Internet Explorer\Configuracion_Iexplorer.bat
+      </p>
+
+      <button id="ie3-btn" class="btn-img-toggle" onclick="toggleStepImage('ie3')">
+        Mostrar imagen
+      </button>
+      <img id="ie3" class="step-img" src="img/ie_paso3.png">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Aceptar Control de cuentas (UAC)</h4>
+
+      <button id="ie4-btn" class="btn-img-toggle" onclick="toggleStepImage('ie4')">
+        Mostrar imagen
+      </button>
+      <img id="ie4" class="step-img" src="img/ie_paso4.png">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Generación de accesos directos VBS</h4>
+
+      <button id="ie5-btn" class="btn-img-toggle" onclick="toggleStepImage('ie5')">
+        Mostrar imágenes
+      </button>
+
+      <img id="ie5" class="step-img" src="img/ie_paso5a.png">
+      <img id="ie5b" class="step-img" src="img/ie_paso5b.png">
+      <img id="ie5c" class="step-img" src="img/ie_paso5c.png">
+    </div>
+</div>
+<div>
+<div>
+
+    
+
+    
+
+
+
+
+
+    
+</section> <!-- Cierra la sección anterior correctamente -->
+
+<section id="aplicativos" class="content-section">
+    
+  <button class="back-button" onclick="showMain()">← Volver al Menú Principal</button>
+  <h2>Guía de Procedimientos de Aplicativos</h2>
+
+  <h3>Procedimientos Disponibles</h3>
+  <ul>
+
+    <!-- ============================== -->
+<!--     PROCEDIMIENTO PDF24       -->
+<!-- ============================== -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('pdf24')">
+    <span class="procedure-title">Instalación PDF24 Creator</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="pdf24" class="procedure-content">
+
+    <!-- INTRODUCCIÓN -->
+    <div class="procedure-step">
+      <h4>Descripción</h4>
+      <p>
+        Procedimiento oficial para instalar <strong>PDF24 Creator</strong>, basado en el documento original.
+        Este software permite crear, unir, editar y convertir archivos PDF.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Descargar instalador oficial</h4>
+      <p>Ingresamos a la página oficial:  
+         <a href="https://tools.pdf24.org/es/creator" target="_blank">https://tools.pdf24.org/es/creator</a>
+      </p>
+
+      <button id="pdf24-img1-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img1')">Mostrar imagen</button>
+
+      <img id="pdf24-img1" class="step-img" src="img/pdf24_1.png" alt="Paso 1">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Seleccionar PDF24 Creator 11.10.1 EXE x64</h4>
+
+      <button id="pdf24-img2-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img2')">Mostrar imagen</button>
+
+      <img id="pdf24-img2" class="step-img" src="img/pdf24_2.png" alt="Paso 2">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Ejecutar instalador descargado</h4>
+
+      <button id="pdf24-img3-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img3')">Mostrar imagen</button>
+
+      <img id="pdf24-img3" class="step-img" src="img/pdf24_3.png" alt="Paso 3">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Aceptar el acuerdo de licencia</h4>
+
+      <button id="pdf24-img4-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img4')">Mostrar imagen</button>
+
+      <img id="pdf24-img4" class="step-img" src="img/pdf24_4.png" alt="Paso 4">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Presionar “Siguiente” en las pantallas iniciales</h4>
+
+      <button id="pdf24-img5-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img5')">Mostrar imagen</button>
+
+      <img id="pdf24-img5" class="step-img" src="img/pdf24_5.png" alt="Paso 5">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6: Desmarcar componentes no necesarios</h4>
+      <p>Desmarcar las opciones sombreadas (según el PDF).</p>
+
+      <button id="pdf24-img6-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img6')">Mostrar imagen</button>
+
+      <img id="pdf24-img6" class="step-img" src="img/pdf24_6.png" alt="Paso 6">
+    </div>
+
+    <!-- PASO 7 -->
+    <div class="procedure-step">
+      <h4>Paso 7: Instalar</h4>
+
+      <button id="pdf24-img7-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img7')">Mostrar imagen</button>
+
+      <img id="pdf24-img7" class="step-img" src="img/pdf24_7.png" alt="Paso 7">
+    </div>
+
+    <!-- PASO 8 -->
+    <div class="procedure-step">
+      <h4>Paso 8: Finalizar instalación</h4>
+
+      <button id="pdf24-img8-btn"
+              class="btn-img-toggle"
+              onclick="toggleStepImage('pdf24-img8')">Mostrar imagen</button>
+
+      <img id="pdf24-img8" class="step-img" src="img/pdf24_8.png" alt="Paso 8">
+    </div>
+
+  </div>
+</div>
+
+    <!-- ================================================= -->
+<!--     PROCEDIMIENTO INSTALACIÓN ADOBE ACROBAT DC     -->
+<!-- ================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('adobe_dc')">
+    <span class="procedure-title">Instalación Adobe Acrobat DC (Versión CAPJ)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="adobe_dc" class="procedure-content">
+
+    <!-- INTRODUCCIÓN -->
+    <div class="procedure-step">
+      <h4>Descripción</h4>
+      <p>
+        Procedimiento estándar para la instalación, configuración inicial y uso básico de 
+        <strong>Adobe Acrobat DC Versión CAPJ</strong>, herramienta utilizada en el Poder Judicial para
+        visualizar, editar y gestionar documentos PDF.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Ingresar al Repositorio NAS</h4>
+      <p>
+        Ir a la ruta:<br>
+        <code>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Aplicaciones Estándar\Adobe Reader DC</code><br>
+        Copiar la carpeta completa y pegarla en:<br>
+        <code>C:\SOPORTE\</code>
+      </p>
+
+      <button id="adobe-img1-btn" class="btn-img-toggle" onclick="toggleStepImage('adobe-img1')">
+        Mostrar imagen
+      </button>
+      <img id="adobe-img1" class="step-img" src="img/adobe_1.png" alt="Paso 1" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Verificar y desinstalar versión anterior</h4>
+      <p>
+        Ingresar a Panel de Control → Programas y características.<br>
+        Buscar Adobe Acrobat / Adobe Reader y desinstalar la versión existente.
+      </p>
+
+      <button id="adobe-img2-btn" class="btn-img-toggle" onclick="toggleStepImage('adobe-img2')">
+        Mostrar imagen
+      </button>
+      <img id="adobe-img2" class="step-img" src="img/adobe_2.png" alt="Paso 2" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Instalar en el siguiente orden</h4>
+      <ol>
+        <li>AdobeReaderDC (VersionAntigua).exe</li>
+        <li>Instalar Pack de fuentes de idioma español</li>
+        <li>Instalar bloqueador de actualizaciones de Adobe</li>
+        <li>Abrir PDF de prueba y aceptar términos y firma</li>
+      </ol>
+
+      <button id="adobe-img3-btn" class="btn-img-toggle" onclick="toggleStepImage('adobe-img3')">
+        Mostrar imagen
+      </button>
+      <img id="adobe-img3" class="step-img" src="img/adobe_3.png" alt="Paso 3" style="display:none;">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Completar instalación</h4>
+      <p>
+        El instalador es sencillo, solo debes aceptar términos → siguiente → siguiente → instalar.<br>
+        Realizar el mismo proceso en todos los archivos del paquete de instalación.
+      </p>
+
+      <button id="adobe-img4-btn" class="btn-img-toggle" onclick="toggleStepImage('adobe-img4')">
+        Mostrar imagen
+      </button>
+      <img id="adobe-img4" class="step-img" src="img/adobe_4.png" alt="Paso 4" style="display:none;">
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================= -->
+<!--  PROCEDIMIENTO: HP IMAGE ASSISTANT (HPIA)                     -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('hpia')">
+    <span class="procedure-title">HP Image Assistant (HPIA) – Actualización de Controladores HP</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="hpia" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Guía oficial para el uso de <strong>HP Image Assistant (HPIA)</strong>, herramienta que permite actualizar
+        controladores, BIOS, firmware y software de equipos HP, garantizando cumplimiento de estándares corporativos.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Instalación de HPIA</h4>
+      <p>Ejecutar el instalador de HP Image Assistant y seguir las instrucciones mostradas en pantalla.</p>
+      <p>Durante la instalación:</p>
+      <ul>
+        <li>Aceptar el acuerdo de licencia.</li>
+        <li>Seleccionar carpeta donde se guardarán los archivos.</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="hpia1-btn" onclick="toggleStepImage('hpia1')">Mostrar imagen</button>
+      <img id="hpia1" class="step-img" src="img/hpia_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Escaneo del Sistema</h4>
+      <p>Una vez abierto HPIA, seleccionar <strong>Analizar imagen</strong> y presionar <strong>Analizar</strong>.</p>
+      <p>El sistema comenzará a realizar un análisis completo del hardware y software del equipo.</p>
+
+      <button class="btn-img-toggle" id="hpia2-btn" onclick="toggleStepImage('hpia2')">Mostrar imagen</button>
+      <img id="hpia2" class="step-img" src="img/hpia_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Revisión de Actualizaciones Disponibles</h4>
+      <p>HPIA mostrará un listado de controladores y componentes que requieren actualización.</p>
+      <p>Debe ingresar a la pestaña <strong>Recomendaciones</strong>.</p>
+
+      <ul>
+        <li>Actualizaciones Críticas</li>
+        <li>Actualizaciones Recomendadas</li>
+        <li>Actualizaciones Opcionales</li>
+      </ul>
+
+      <button class="btn-img-toggle" id="hpia3-btn" onclick="toggleStepImage('hpia3')">Mostrar imagen</button>
+      <img id="hpia3" class="step-img" src="img/hpia_paso3.png" style="display:none;">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Descarga e Instalación de Actualizaciones</h4>
+      <p>Seleccionar las actualizaciones deseadas y presionar <strong>Descargar</strong>.</p>
+      <p>Recomendación corporativa: elegir <strong>Descargar SoftPaq(s), extraer archivos e instalar</strong>.</p>
+
+      <button class="btn-img-toggle" id="hpia4-btn" onclick="toggleStepImage('hpia4')">Mostrar imagen</button>
+      <img id="hpia4" class="step-img" src="img/hpia_paso4.png" style="display:none;">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5: Monitoreo del Proceso</h4>
+      <p>HPIA mostrará el progreso de descarga e instalación en tiempo real.</p>
+
+      <button class="btn-img-toggle" id="hpia5-btn" onclick="toggleStepImage('hpia5')">Mostrar imagen</button>
+      <img id="hpia5" class="step-img" src="img/hpia_paso5.png" style="display:none;">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6: Verificación Final</h4>
+      <p>
+        Una vez instaladas las actualizaciones, si aparece un mensaje de error,
+        simplemente reiniciar el equipo y volver a ejecutar HPIA para confirmar que el sistema quedó actualizado.
+      </p>
+
+      <button class="btn-img-toggle" id="hpia6-btn" onclick="toggleStepImage('hpia6')">Mostrar imagen</button>
+      <img id="hpia6" class="step-img" src="img/hpia_paso6.png" style="display:none;">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- ================================================= -->
+<!--      PROCEDIMIENTO INSTALACIÓN ORACLE 11g         -->
+<!-- ================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('oracle11g')">
+    <span class="procedure-title">Instalación Oracle 11g</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="oracle11g" class="procedure-content">
+
+    <div class="procedure-step">
+      <h4>Paso 1: Copiar carpeta Oracle11g</h4>
+      <p>
+        Ir a la ruta:<br>
+        <strong>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\Oracle\</strong><br>
+        Copiar la carpeta y pegarla en C:\<br>
+        Crear carpeta <strong>Oracle11g</strong>.
+      </p>
+
+      <button id="oracle11g-img1-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img1')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img1" class="step-img" src="img/oracle11g_1.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar setup.exe</h4>
+      <button id="oracle11g-img2-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img2')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img2" class="step-img" src="img/oracle11g_2.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 3: Clic en “Siguiente”</h4>
+      <button id="oracle11g-img3-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img3')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img3" class="step-img" src="img/oracle11g_3.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 4: Seleccionar “Personalizado”</h4>
+      <button id="oracle11g-img4-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img4')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img4" class="step-img" src="img/oracle11g_4.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 5: Directorio Base</h4>
+      <p>Ingresar ruta <strong>C:\ORACLE11G</strong>, luego “Siguiente”.</p>
+      <button id="oracle11g-img5-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img5')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img5" class="step-img" src="img/oracle11g_5.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 6: Marcar requisitos con error</h4>
+      <button id="oracle11g-img6-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img6')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img6" class="step-img" src="img/oracle11g_6.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 7: Seleccionar “Seleccionar Todo”</h4>
+      <button id="oracle11g-img7-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img7')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img7" class="step-img" src="img/oracle11g_7.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 8: Repetir “Seleccionar Todo”</h4>
+      <button id="oracle11g-img8-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img8')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img8" class="step-img" src="img/oracle11g_8.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 9: Revisar resumen e instalar</h4>
+      <button id="oracle11g-img9-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img9')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img9" class="step-img" src="img/oracle11g_9.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 10: Instalar y esperar</h4>
+      <button id="oracle11g-img10-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img10')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img10" class="step-img" src="img/oracle11g_10.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 11: Configuración típica</h4>
+      <button id="oracle11g-img11-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img11')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img11" class="step-img" src="img/oracle11g_11.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 12: Finalizar instalación</h4>
+      <button id="oracle11g-img12-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img12')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img12" class="step-img" src="img/oracle11g_12.png">
+    </div>
+
+    <div class="procedure-step">
+      <h4>Paso 13: Copiar "tnsnames.ora"</h4>
+      <p>
+        Desde:<br>
+        <strong>C:\ORACLE11G\product\11.1.0\client_1\Network\Admin</strong>
+      </p>
+      <button id="oracle11g-img13-btn" class="btn-img-toggle" onclick="toggleStepImage('oracle11g-img13')">
+        Mostrar imagen
+      </button>
+      <img id="oracle11g-img13" class="step-img" src="img/oracle11g_13.png">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================= -->
+<!--  PROCEDIMIENTO JAVA 231      -->
+<!-- ============================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procJava231')">
+    <span class="procedure-title">Instalación Java Versión 231</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procJava231" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Java Runtime Environment (JRE) 1.8.0_231 es la versión certificada por la CAPJ 
+        para garantizar compatibilidad con sistemas judiciales que dependen de applets 
+        y librerías heredadas.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Ingresar al Repositorio NAS</h4>
+      <p>Acceder a la siguiente ruta:</p>
+
+      <p class="highlight-text">
+        Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Programas para Sistemas\Java
+      </p>
+
+      <button id="java231-1-btn" class="btn-img-toggle" onclick="toggleStepImage('java231-1')">
+        Mostrar imagen
+      </button>
+      <img id="java231-1" class="step-img"
+           src="img/java231_paso1.png"
+           alt="Repositorio Java 231">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar Instalador</h4>
+      <p>
+        Hacer clic derecho en <strong>jre-8u231-windows-i586.exe</strong> y seleccionar 
+        <strong>Ejecutar como administrador</strong>.
+      </p>
+
+      <button id="java231-2-btn" class="btn-img-toggle" onclick="toggleStepImage('java231-2')">
+        Mostrar imagen
+      </button>
+      <img id="java231-2" class="step-img"
+           src="img/java231_paso2.png"
+           alt="Ejecutar instalador Java 231">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Aceptar Términos e Instalar</h4>
+      <p>
+        Aceptar los términos de licencia y proceder con la instalación.
+      </p>
+
+      <button id="java231-3-btn" class="btn-img-toggle" onclick="toggleStepImage('java231-3')">
+        Mostrar imagen
+      </button>
+      <img id="java231-3" class="step-img"
+           src="img/java231_paso3.png"
+           alt="Instalación Java 231">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Verificar Instalación</h4>
+      <p>
+        Una vez instalado, buscar en la barra de inicio “Acerca de Java” para 
+        verificar versión <strong>1.8.0_231</strong>.
+      </p>
+
+      <button id="java231-4-btn" class="btn-img-toggle" onclick="toggleStepImage('java231-4')">
+        Mostrar imagen
+      </button>
+      <img id="java231-4" class="step-img"
+           src="img/java231_paso4.png"
+           alt="Verificar versión instalada">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- =============================================== -->
+<!--  PROCEDIMIENTO: INSTALACIÓN OFFICE 365          -->
+<!-- =============================================== -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procOffice365')">
+    <span class="procedure-title">Instalación Office 365 Corporativo</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procOffice365" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para instalación de <strong>Microsoft Office 365 Corporativo</strong>,
+        garantizando compatibilidad institucional y correcta activación mediante Microsoft Authenticator.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Ingresar al Repositorio NAS</h4>
+      <p>Ingresar a la siguiente ruta:</p>
+
+      <p class="highlight-text">
+        Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Office\Office_365_Oficial_CAPJ\ Instalador Microsoft 365 (Copiable).bat
+      </p>
+
+      <p>Copiar la carpeta completa a <strong>Disco Local C → Carpeta Soporte</strong>.</p>
+
+      <button id="office1-btn" class="btn-img-toggle" onclick="toggleStepImage('office1')">Mostrar imagen</button>
+      <img id="office1" class="step-img" src="img/office365_paso1.png" alt="Paso 1 Office 365">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar instalador como Administrador</h4>
+      <p>
+        Hacer clic derecho en <strong>Instalador Microsoft 365 (Copiable).bat</strong> →  
+        seleccionar <strong>Ejecutar como administrador</strong>.
+      </p>
+      <p>
+        El instalador requiere estar en el dominio <strong>poderjudicial.cl</strong> y contar con permisos administrativos.
+      </p>
+
+      <button id="office2-btn" class="btn-img-toggle" onclick="toggleStepImage('office2')">Mostrar imagen</button>
+      <img id="office2" class="step-img" src="img/office365_paso2.png" alt="Paso 2 Office 365">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Instalación de Office 365</h4>
+      <p>El instalador descargará e instalará la suite Office 365 automáticamente.</p>
+
+      <button id="office3-btn" class="btn-img-toggle" onclick="toggleStepImage('office3')">Mostrar imagen</button>
+      <img id="office3" class="step-img" src="img/office365_paso3.png" alt="Paso 3 Instalación">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Activación mediante Microsoft Authenticator</h4>
+      <p>
+        La activación se realiza con el usuario presente.  
+        Deberá aprobar un código enviado a su aplicación <strong>Microsoft Authenticator</strong> en el celular.
+      </p>
+
+      <button id="office4-btn" class="btn-img-toggle" onclick="toggleStepImage('office4')">Mostrar imagen</button>
+      <img id="office4" class="step-img" src="img/office365_paso4.png" alt="Paso 4 Activación">
+    </div>
+  </div>
+</div>
+
+
+<!-- =============================================== -->
+<!--  PROCEDIMIENTO: INSTALACIÓN OFFICE 2021         -->
+<!-- =============================================== -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procOffice2021')">
+    <span class="procedure-title">Instalación Office 2021 Corporativo</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procOffice2021" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para instalación de <strong>Microsoft Office 2021 Corporativo</strong>,
+        garantizando compatibilidad institucional y activación mediante dominio Poder Judicial.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1: Ingresar al Repositorio NAS</h4>
+
+      <p>Ruta del instalador:</p>
+
+      <p class="highlight-text">
+        Z:\REPOSITORIO MESA DE AYUDA\Repositorio\FV_MDA\Office\Office 2021 CAPJ Instalador Office 2021(Copiable).bat
+      </p>
+
+      <p>Copiar la carpeta completa a <strong>C:\Soporte</strong>.</p>
+
+      <button id="office2021-img1-btn" class="btn-img-toggle" onclick="toggleStepImage('office2021-img1')">Mostrar imagen</button>
+      <img id="office2021-img1" class="step-img" src="img/office2021_paso1.png" style="display:none;" alt="Paso 1 Office 2021">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2: Ejecutar instalador como Administrador</h4>
+
+      <p>
+        Hacer clic derecho sobre el archivo <strong>Instalador Office 2021 (Copiable).bat</strong>  
+        y seleccionar <strong>Ejecutar como administrador</strong>.
+      </p>
+
+      <p>
+        El instalador requiere estar en el dominio <strong>poderjudicial.cl</strong>.
+      </p>
+
+      <button id="office2021-img2-btn" class="btn-img-toggle" onclick="toggleStepImage('office2021-img2')">Mostrar imagen</button>
+      <img id="office2021-img2" class="step-img" src="img/office2021_paso2.png" style="display:none;" alt="Paso 2 Office 2021">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3: Instalación de Office 2021</h4>
+
+      <p>El instalador descargará e instalará Office 2021 automáticamente.</p>
+
+      <button id="office2021-img3-btn" class="btn-img-toggle" onclick="toggleStepImage('office2021-img3')">Mostrar imagen</button>
+      <img id="office2021-img3" class="step-img" src="img/office2021_paso3.png" style="display:none;" alt="Paso 3 Office 2021">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4: Activación de Office 2021</h4>
+
+      <p>
+        La activación se realiza automáticamente mediante el dominio institucional  
+        <strong>poderjudicial.cl</strong>.
+      </p>
+
+      <button id="office2021-img4-btn" class="btn-img-toggle" onclick="toggleStepImage('office2021-img4')">Mostrar imagen</button>
+      <img id="office2021-img4" class="step-img" src="img/office2021_paso4.png" style="display:none;" alt="Paso 4 Office 2021">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- ======================================================= -->
+<!--  PROCEDIMIENTO: CONFIGURACIÓN OUTLOOK (POP/IMAP)        -->
+<!-- ======================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procOutlook')">
+    <span class="procedure-title">Configuración Outlook (POP/IMAP)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procOutlook" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Procedimiento oficial para configuración de cuentas Outlook utilizando servidor 
+        POP3/SMTP institucional. Basado en el documento original Mesa de Ayuda HP.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso N°1: Abrir Panel de Control → Cuentas de Usuario → Mail (Microsoft Outlook)</h4>
+      <p>Ingresar al panel para administrar perfiles de Outlook.</p>
+
+      <button id="out1-btn" class="btn-img-toggle" onclick="toggleStepImage('out1')">
+        Mostrar imagen
+      </button>
+      <img id="out1" class="step-img" src="img/outlook_paso1.png" alt="Paso 1 Outlook">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso N°2: Cuentas de correo → Nuevo → Configuración manual → POP o IMAP</h4>
+      <p>Ingresar los datos de cuenta e iniciar la configuración manual como muestra el documento.</p>
+
+      <button id="out2-btn" class="btn-img-toggle" onclick="toggleStepImage('out2')">
+        Mostrar imagen
+      </button>
+      <img id="out2" class="step-img" src="img/outlook_paso2.png" alt="Paso 2 Outlook">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso N°3: Agregar usuario, contraseña y configurar puertos</h4>
+      <p>
+        Completar configuración manual:  
+        • Servidor entrante (POP3): <strong>995</strong>  
+        • Servidor saliente (SMTP): <strong>587</strong>  
+        • Habilitar casilla "Mi servidor de salida requiere autenticación"
+      </p>
+
+      <button id="out3-btn" class="btn-img-toggle" onclick="toggleStepImage('out3')">
+        Mostrar imagen
+      </button>
+      <img id="out3" class="step-img" src="img/outlook_paso3.png" alt="Paso 3 Outlook">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso N°4: Probar configuración de la cuenta</h4>
+      <p>Outlook debe validar conexión a POP y SMTP antes de finalizar.</p>
+
+      <button id="out4-btn" class="btn-img-toggle" onclick="toggleStepImage('out4')">
+        Mostrar imagen
+      </button>
+      <img id="out4" class="step-img" src="img/outlook_paso4.png" alt="Paso 4 Outlook">
+    </div>
+  </div>
+</div>
+
+
+<!-- ====================================================== -->
+<!--  INSTALACIÓN DOBLE FACTOR DE AUTENTICACIÓN PARA VPN    -->
+<!-- ====================================================== -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('procVPN2FA')">
+    <span class="procedure-title">Instalación Doble Factor de Autenticación para VPN Cisco (Usuarios y mesa de ayuda)</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="procVPN2FA" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>
+        Instructivo oficial para la configuración del <strong>Doble Factor de Autenticación</strong> 
+        utilizado para acceder de forma segura a la VPN del Poder Judicial.  
+        Este procedimiento incluye la habilitación de Microsoft Authenticator y el registro de número telefónico.
+      </p>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="procedure-step">
+      <h4>Paso 1</h4>
+      <p>Acceder a: <strong>https://mysignins.microsoft.com/security-info</strong></p>
+      <p>Ingresar usuario y contraseña del dominio.</p>
+
+      <button id="vpn1-btn" onclick="toggleStepImage('vpn1')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn1" class="step-img" src="img/vpn_paso1.png" style="display:none;">
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="procedure-step">
+      <h4>Paso 2</h4>
+      <p>En la pestaña de seguridad seleccionar <strong>“Agregar método”</strong>.</p>
+
+      <button id="vpn2-btn" onclick="toggleStepImage('vpn2')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn2" class="step-img" src="img/vpn_paso2.png" style="display:none;">
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="procedure-step">
+      <h4>Paso 3</h4>
+      <p>Seleccionar método <strong>"Aplicación de autenticación"</strong>.</p>
+
+      <button id="vpn3-btn" onclick="toggleStepImage('vpn3')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn3" class="step-img" src="img/vpn_paso3.png" style="display:none;">
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="procedure-step">
+      <h4>Paso 4</h4>
+      <p>El sistema pedirá Microsoft Authenticator. Si está instalada, presionar <strong>Siguiente</strong>.</p>
+
+      <button id="vpn4-btn" onclick="toggleStepImage('vpn4')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn4" class="step-img" src="img/vpn_paso4.png" style="display:none;">
+    </div>
+
+    <!-- PASO 5 -->
+    <div class="procedure-step">
+      <h4>Paso 5</h4>
+      <p>Se mostrará un <strong>código QR</strong>. Debe escanearse con la app Authenticator.</p>
+
+      <button id="vpn6-btn" onclick="toggleStepImage('vpn6')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn6" class="step-img" src="img/vpn_paso6.png" style="display:none;">
+    </div>
+
+    <!-- PASO 6 -->
+    <div class="procedure-step">
+      <h4>Paso 6</h4>
+      <p>Abrir Authenticator → <strong>Escanear código QR</strong> → seleccionar cuenta profesional.</p>
+
+      <button id="vpn7-btn" onclick="toggleStepImage('vpn7')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn7" class="step-img" src="img/vpn_paso7.png" style="display:none;">
+    </div>
+
+    <!-- PASO 7 -->
+    <div class="procedure-step">
+      <h4>Paso 7</h4>
+      <p>Permitir el uso de la cámara y escanear el QR mostrado en el PC.</p>
+
+      <button id="vpn8-btn" onclick="toggleStepImage('vpn8')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn8" class="step-img" src="img/vpn_paso8.png" style="display:none;">
+    </div>
+
+    <!-- PASO 8 -->
+    <div class="procedure-step">
+      <h4>Paso 8</h4>
+      <p>Después del escaneo, se enviará una notificación al móvil. Debe aprobarla.</p>
+
+      <button id="vpn9-btn" onclick="toggleStepImage('vpn9')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn9" class="step-img" src="img/vpn_paso9.png" style="display:none;">
+    </div>
+
+    <!-- PASO 9 -->
+    <div class="procedure-step">
+      <h4>Paso 9</h4>
+      <p>La aprobación será confirmada como exitosa.</p>
+
+      <button id="vpn10-btn" onclick="toggleStepImage('vpn10')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn10" class="step-img" src="img/vpn_paso10.png" style="display:none;">
+    </div>
+
+    <!-- PASO 10 -->
+    <div class="procedure-step">
+      <h4>Paso 10</h4>
+      <p>El método quedará registrado correctamente.</p>
+
+      <button id="vpn11-btn" onclick="toggleStepImage('vpn11')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn11" class="step-img" src="img/vpn_paso11.png" style="display:none;">
+    </div>
+
+    <!-- PASO 11 -->
+    <div class="procedure-step">
+      <h4>Paso 11</h4>
+      <p>Agregar nuevo método → seleccionar <strong>Teléfono</strong>.</p>
+
+      <button id="vpn12-btn" onclick="toggleStepImage('vpn12')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn12" class="step-img" src="img/vpn_paso12.png" style="display:none;">
+    </div>
+
+    <!-- PASO 12 -->
+    <div class="procedure-step">
+      <h4>Paso 12</h4>
+      <p>Registrar número telefónico.</p>
+
+      <button id="vpn13-btn" onclick="toggleStepImage('vpn13')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn13" class="step-img" src="img/vpn_paso13.png" style="display:none;">
+    </div>
+
+    <!-- PASO 13 -->
+    <div class="procedure-step">
+      <h4>Paso 13</h4>
+      <p>Confirmación de registro del número.</p>
+
+      <button id="vpn15-btn" onclick="toggleStepImage('vpn15')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn15" class="step-img" src="img/vpn_paso15.png" style="display:none;">
+    </div>
+
+    <!-- PASO 14 -->
+    <div class="procedure-step">
+      <h4>Paso 14</h4>
+      <p>Abrir cliente Cisco VPN AnyConnect → conectar a <strong>vpn.pjud.cl</strong>.</p>
+
+      <button id="vpn16-btn" onclick="toggleStepImage('vpn16')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn16" class="step-img" src="img/vpn_paso16.png" style="display:none;">
+    </div>
+
+    <!-- PASO 15 -->
+    <div class="procedure-step">
+      <h4>Paso 15</h4>
+      <p>Seleccionar grupo: <strong>VPN-DOBLE-FACTOR</strong>.</p>
+
+      <button id="vpn17-btn" onclick="toggleStepImage('vpn17')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn17" class="step-img" src="img/vpn_paso17.png" style="display:none;">
+    </div>
+
+    <!-- PASO 16 -->
+    <div class="procedure-step">
+      <h4>Paso 16</h4>
+      <p>Ingresar credenciales de dominio.</p>
+
+      <button id="vpn18-btn" onclick="toggleStepImage('vpn18')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn18" class="step-img" src="img/vpn_paso18.png" style="display:none;">
+    </div>
+
+    <!-- PASO 17 -->
+    <div class="procedure-step">
+      <h4>Paso 17</h4>
+      <p>Si demora más de 30 segundos, usar modo incógnito o Firefox.</p>
+
+      <button id="vpn19-btn" onclick="toggleStepImage('vpn19')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn19" class="step-img" src="img/vpn_paso19.png" style="display:none;">
+    </div>
+
+    <!-- PASO 18 -->
+    <div class="procedure-step">
+      <h4>Paso 18</h4>
+      <p>Se enviará un PUSH al Authenticator. Ingresar el número mostrado.</p>
+
+      <button id="vpn20-btn" onclick="toggleStepImage('vpn20')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn20" class="step-img" src="img/vpn_paso20.png" style="display:none;">
+    </div>
+
+    <!-- PASO 19 -->
+    <div class="procedure-step">
+      <h4>Paso 19</h4>
+      <p>Conexión exitosa a la VPN del Poder Judicial.</p>
+
+      <button id="vpn21-btn" onclick="toggleStepImage('vpn21')" class="btn-img-toggle">Mostrar imagen</button>
+      <img id="vpn21" class="step-img" src="img/vpn_paso21.png" style="display:none;">
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ============================================================= -->
+<!--  SECCIÓN: IMPRESORAS Y EQUIPOS DE DIGITALIZACIÓN             -->
+<!-- ============================================================= -->
+
+<section id="impresoras" class="content-section">
+  <button class="back-button" onclick="showMain()">← Volver al Menú Principal</button>
+
+  <h2>Impresoras y Equipos de Digitalización</h2>
+
+  <p style="padding: 1.5rem; background:#e8f3ff; border-left:4px solid #2196F3; border-radius:8px;">
+    Manuales oficiales de instalación, configuración y soporte para impresoras HP, Samsung  
+    y escáneres HP Flow.
+  </p>
+
+  <div class="system-grid">
+
+    
+    <!-- ============================================================= -->
+    <!--                     IMPRESORAS HP 408DN                        -->
+    <!-- ============================================================= -->
+    
+    <div class="procedure-item">
+      <div class="procedure-header" onclick="toggleProcedure('hp408dn')">
+        <span class="procedure-title">HP Laser 408dn</span>
+        <span class="procedure-icon">▼</span>
+      </div>
+
+      <div id="hp408dn" class="procedure-content">
+
+      
+        <div class="procedure-intro">
+  <p>Procedimiento oficial de instalación y configuración de la impresora HP Laser 408dn.</p>
+</div>
+
+<!-- PASO 1 -->
+<div class="procedure-step">
+  <h4>Paso 1: Descargar Driver</h4>
+  <p>
+    Ir a la siguiente ruta:<br>
+    <b>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Drivers\Impresoras\HP\29.- HP Laser 408dn/</b><br>
+    Ejecutar el archivo del driver y seleccionar <b>Siguiente</b>.
+  </p>
+
+  <button id="hp408dn1-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn1')">Mostrar imagen</button>
+  <img id="hp408dn1" class="step-img" src="img/hp408_paso1.png" style="display:none;">
+</div>
+
+<!-- PASO 2 -->
+<div class="procedure-step">
+  <h4>Paso 2: Aceptar Acuerdos</h4>
+  <p>
+    Activar ambas casillas de aceptación de licencia y recop. de datos.<br>
+    Luego presionar <b>Siguiente</b>.
+  </p>
+
+  <button id="hp408dn2-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn2')">Mostrar imagen</button>
+  <img id="hp408dn2" class="step-img" src="img/hp408_paso2.png" style="display:none;">
+</div>
+
+<!-- PASO 3 -->
+<div class="procedure-step">
+  <h4>Paso 3: Selección de tipo de conexión</h4>
+  <p>
+    Elegir si la impresora se instalará vía <b>USB</b> o <b>RED</b>.<br>
+    Luego presionar <b>Siguiente</b>.
+  </p>
+
+  <button id="hp408dn3-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn3')">Mostrar imagen</button>
+  <img id="hp408dn3" class="step-img" src="img/hp408_paso3.png" style="display:none;">
+</div>
+
+<!-- PASO 4 -->
+<div class="procedure-step">
+  <h4>Paso 4: Selección de utilidades</h4>
+  <p>
+    Seleccionar todas las utilidades disponibles y presionar <b>Siguiente</b>.
+  </p>
+
+  <button id="hp408dn4-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn4')">Mostrar imagen</button>
+  <img id="hp408dn4" class="step-img" src="img/hp408_paso4.png" style="display:none;">
+</div>
+
+<!-- PASO 5 -->
+<div class="procedure-step">
+  <h4>Paso 5: Finalizar Instalación</h4>
+  <p>
+    Esperar el proceso. Seleccionar <b>Activar Monitor de Estado</b> y luego <b>Finalizar</b>.
+  </p>
+
+  <button id="hp408dn5-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn5')">Mostrar imagen</button>
+  <img id="hp408dn5" class="step-img" src="img/hp408_paso5.png" style="display:none;">
+</div>
+
+<!-- PASO 6 -->
+<div class="procedure-step">
+  <h4>Paso 6: Ingresar a Propiedades de Impresión</h4>
+  <p>
+    Panel de Control → Dispositivos e impresoras → Clic derecho en HP Laser 408 → <b>Propiedades de impresión</b>.
+  </p>
+
+  <button id="hp408dn6-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn6')">Mostrar imagen</button>
+  <img id="hp408dn6" class="step-img" src="img/hp408_paso6.png" style="display:none;">
+</div>
+
+<!-- PASO 7 -->
+<div class="procedure-step">
+  <h4>Paso 7: Configurar Valores</h4>
+  <p>
+    Ir a: <b>Opciones Avanzadas → Valores predeterminados de impresión</b>.
+  </p>
+
+  <button id="hp408dn7-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn7')">Mostrar imagen</button>
+  <img id="hp408dn7" class="step-img" src="img/hp408_paso7.png" style="display:none;">
+</div>
+
+<!-- PASO 8 -->
+<div class="procedure-step">
+  <h4>Paso 8: Ajustes de Papel</h4>
+  <p>
+    En la pestaña <b>Papel</b> seleccionar:<br>
+    • Tamaño de papel usado por el tribunal (Oficio, Carta, etc.)<br>
+    • Tipo de papel: <b>Papel Normal</b>
+  </p>
+
+  <button id="hp408dn8-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn8')">Mostrar imagen</button>
+  <img id="hp408dn8" class="step-img" src="img/hp408_paso8.png" style="display:none;">
+</div>
+
+<!-- PASO 9: Cambio de tóner -->
+<div class="procedure-step">
+  <h4>Cambio de tóner</h4>
+  <ul>
+    <li>Abrir la cubierta frontal.</li>
+    <li>Retirar tóner usado.</li>
+    <li>Desembalar el tóner nuevo.</li>
+    <li>Retirar protector.</li>
+    <li>Remover precinto.</li>
+    <li>Instalar el tóner nuevo y cerrar la cubierta.</li>
+  </ul>
+
+  <button id="hp408dn9-btn" class="btn-img-toggle" onclick="toggleStepImage('hp408dn9')">Mostrar imagen</button>
+  <img id="hp408dn9" class="step-img" src="img/hp408_paso9.png" style="display:none;">
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!-- ============================================================= -->
+<!--        IMPRESORA SAMSUNG ML-4020ND – PROCEDIMIENTO COMPLETO   -->
+<!-- ============================================================= -->
+
+<div class="procedure-item">
+  <div class="procedure-header" onclick="toggleProcedure('sm4020')">
+    <span class="procedure-title">Samsung ML-4020ND</span>
+    <span class="procedure-icon">▼</span>
+  </div>
+
+  <div id="sm4020" class="procedure-content">
+
+    <div class="procedure-intro">
+      <p>Procedimiento oficial de instalación y configuración de la impresora Samsung ML-4020ND.</p>
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 1                -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 1: Ubicar el instalador</h4>
+      <ul>
+        <li>Acceder a: <strong>Z:\REPOSITORIO MESA DE AYUDA\Repositorio\Drivers\Impresoras\Samsung\Samsung M4020ND</strong></li>
+        <li>Entrar en: <strong>Windows</strong></li>
+        <li>Ejecutar: <strong>4020ND_SPL_PCL_V3.13.13.00.01_CDV1.39.exe</strong></li>
+        <li>Presionar <strong>Siguiente</strong></li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_1-btn" onclick="toggleStepImage('sm4020_1')">Mostrar imagen</button>
+      <img id="sm4020_1" class="step-img" src="img/sm4020_paso1.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 2                -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 2: Aceptar licencia</h4>
+      <ul>
+        <li>Leer el contrato de licencia.</li>
+        <li>Seleccionar <strong>Acepto los términos.</strong></li>
+        <li>Presionar <strong>Siguiente</strong>.</li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_2-btn" onclick="toggleStepImage('sm4020_2')">Mostrar imagen</button>
+      <img id="sm4020_2" class="step-img" src="img/sm4020_paso2.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 3                -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3: Seleccionar tipo de conexión</h4>
+      <p>Elegir cómo se conectará la impresora:</p>
+      <ul>
+        <li>USB</li>
+        <li>Red</li>
+        <li>Otra conexión</li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_3-btn" onclick="toggleStepImage('sm4020_3')">Mostrar imagen</button>
+      <img id="sm4020_3" class="step-img" src="img/sm4020_paso3.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 3.1 USB          -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3.1: Instalación mediante USB</h4>
+      <ul>
+        <li>Conectar el cable USB al PC.</li>
+        <li>Esperar detección automática.</li>
+        <li>Continuar al paso 4.</li>
+      </ul>
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 3.2 RED          -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3.2: Instalación mediante red</h4>
+      <ul>
+        <li>Seleccionar: <strong>No, mi impresora ya está conectada a la red.</strong></li>
+        <li>Presionar <strong>Siguiente</strong></li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_4-btn" onclick="toggleStepImage('sm4020_4')">Mostrar imagen</button>
+      <img id="sm4020_4" class="step-img" src="img/sm4020_paso4.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--   PASO 3.3: BÚSQUEDA RED     -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3.3: Búsqueda automática en la red</h4>
+      <ul>
+        <li>El instalador buscará la impresora.</li>
+        <li>Seleccionarla cuando aparezca.</li>
+        <li>Presionar <strong>Siguiente</strong>.</li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_5-btn" onclick="toggleStepImage('sm4020_5')">Mostrar imagen</button>
+      <img id="sm4020_5" class="step-img" src="img/sm4020_paso5.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--   PASO 3.3.1: NO ENCONTRADA   -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3.3.1: Si la impresora NO aparece</h4>
+      <ul>
+        <li>Seleccionar: <strong>Entrada directa</strong></li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_6-btn" onclick="toggleStepImage('sm4020_6')">Mostrar imagen</button>
+      <img id="sm4020_6" class="step-img" src="img/sm4020_paso6.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--   PASO 3.3.2: IP MANUAL       -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 3.3.2: Ingresar IP manualmente</h4>
+      <ul>
+        <li>Ingresar la IP asignada.</li>
+        <li>Presionar <strong>Siguiente</strong>.</li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_7-btn" onclick="toggleStepImage('sm4020_7')">Mostrar imagen</button>
+      <img id="sm4020_7" class="step-img" src="img/sm4020_paso7.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 4                -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 4: Selección de software</h4>
+      <ul>
+        <li>Mantener valores por defecto.</li>
+        <li>Presionar <strong>Siguiente</strong>.</li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_8-btn" onclick="toggleStepImage('sm4020_8')">Mostrar imagen</button>
+      <img id="sm4020_8" class="step-img" src="img/sm4020_paso8.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!--        PASO 5                -->
+    <!-- ============================= -->
+    <div class="procedure-step">
+      <h4>Paso 5: Finalizar instalación</h4>
+      <ul>
+        <li>Activar: <strong>Habilitar monitor de estado</strong></li>
+        <li>Presionar <strong>Finalizar</strong></li>
+      </ul>
+    </div>
+
+    <!-- ============================= -->
+    <!--      CONFIGURACIÓN PAPEL     -->
+    <!-- ============================= -->
+
+    <div class="procedure-step">
+      <h4>Configuración del papel</h4>
+      <ul>
+        <li>Tamaño original: <strong>Oficio 8.5 x 13</strong></li>
+        <li>Tamaño salida: <strong>Igual al original</strong></li>
+        <li>Origen: <strong>Bandeja 1</strong></li>
+        <li>Tipo: <strong>Normal</strong></li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_10-btn" onclick="toggleStepImage('sm4020_10')">Mostrar imagen</button>
+      <img id="sm4020_10" class="step-img" src="img/sm4020_papel.png" style="display:none;">
+    </div>
+
+    <!-- ============================= -->
+    <!-- CONFIGURACIÓN FÍSICA IMPRESORA -->
+    <!-- ============================= -->
+
+    <div class="procedure-step">
+      <h4>Configuración física en la impresora</h4>
+      <ul>
+        <li>Bandeja MU: <strong>A4</strong></li>
+        <li>Bandeja 1: <strong>Folio</strong></li>
+      </ul>
+      <button class="btn-img-toggle" id="sm4020_11-btn" onclick="toggleStepImage('sm4020_11')">Mostrar imagen</button>
+      <img id="sm4020_11" class="step-img" src="img/sm4020_config.png" style="display:none;">
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ============================================================= -->
+    <!--     ESCÁNER HP DIGITAL SENDER FLOW 8500fn2                    -->
+    <!-- ============================================================= -->
+
+    <div class="procedure-item">
+      <div class="procedure-header" onclick="toggleProcedure('hpFlow8500')">
+        <span class="procedure-title">Configuración Scanner HP Digital Sender Flow 8500fn2</span>
+        <span class="procedure-icon">▼</span>
+      </div>
+
+      <div id="hpFlow8500" class="procedure-content">
+
+        <div class="procedure-intro">
+          <p>
+            Procedimiento oficial para la <strong>instalación y configuración</strong> del 
+            escáner <strong>HP Digital Sender Flow 8500fn2</strong>, incluyendo software HP Scan,
+            paquete TWAIN y ajustes de escaneo normal.
+          </p>
+        </div>
+
+        <!-- PASO 1 -->
+        <div class="procedure-step">
+          <h4>Paso 1: Copiar instaladores desde el repositorio Nas</h4>
+          <p>
+            Copiar los archivos <strong>HP Scan and Twain Package for USB_Win10.exe</strong> e 
+            <strong>IDRS-15.2.1122.0-IDRS.msi</strong> desde la ruta:
+          </p>
+          <p class="highlight-text">
+            Z:\REPOSITORIO TECNICO TERRENO\Controladores\Scanner\Hp Scanner 8500 fn2
+          </p>
+          <p>
+            Copiarlos al directorio local <strong>C:\Soporte</strong> del equipo donde se configurará el escáner.
+          </p>
+
+          <button id="hpFlow8500_1-btn" class="btn-img-toggle"
+                  onclick="toggleStepImage('hpFlow8500_1')">Mostrar imagen</button>
+          <img id="hpFlow8500_1" class="step-img" src="img/hpFlow8500_paso1.png" style="display:none;">
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="procedure-step">
+          <h4>Paso 2: Conectar el escáner al equipo</h4>
+          <p>
+            Conectar el escáner HP Digital Sender Flow 8500fn2 al equipo utilizando un 
+            <strong>cable USB</strong> directo.
+          </p>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="procedure-step">
+          <h4>Paso 3: Instalar HP Scan and Twain Package</h4>
+          <p>
+            Ejecutar como administrador el archivo 
+            <strong>HP Scan and Twain Package for USB_Win10.exe</strong> ubicado en 
+            <strong>C:\Soporte</strong> y seguir las instrucciones del asistente de instalación.
+          </p>
+          <p>Dejar todas las opciones en sus valores predeterminados hasta finalizar.</p>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="procedure-step">
+          <h4>Paso 4: Instalar IDRS</h4>
+          <p>
+            Ejecutar el instalador <strong>IDRS-15.2.1122.0-IDRS.msi</strong> desde 
+            <strong>C:\Soporte</strong>.  
+            Este componente se instalará y cerrará automáticamente al finalizar.
+          </p>
+        </div>
+
+        <!-- PASO 5 -->
+        <div class="procedure-step">
+          <h4>Paso 5: Abrir la aplicación HP Digital Sender Flow 8500fn2</h4>
+          <p>
+            Una vez instalado el software, ubicar en el escritorio el acceso directo 
+            <strong>HP Digital Sender Flow 8500fn2 (USB)</strong> y ejecutarlo.
+          </p>
+          <p>
+            Esperar a que la aplicación reconozca el escáner conectado por USB.
+          </p>
+
+          <button id="hpFlow8500_5-btn" class="btn-img-toggle"
+                  onclick="toggleStepImage('hpFlow8500_5')">Mostrar imagen</button>
+          <img id="hpFlow8500_5" class="step-img" src="img/hpFlow8500_paso5.png" style="display:none;">
+        </div>
+
+        <!-- PASO 6 -->
+        <div class="procedure-step">
+          <h4>Paso 6: Configurar atajo de “Escaneo normal”</h4>
+          <p>
+            En la ventana principal de HP Scan, seleccionar el atajo 
+            <strong>“Escaneo normal”</strong> y configurar los parámetros como sigue:
+          </p>
+
+          <ul>
+            <li><strong>Tipo de elemento:</strong> Documento</li>
+            <li><strong>Lado de página:</strong> 1 cara (frontal)</li>
+            <li><strong>Tamaño de página:</strong> Carta (8,5 x 11 pulgadas)</li>
+            <li><strong>Origen:</strong> Alimentador de documentos, si está cargado</li>
+            <li><strong>Imagen - Modo de color:</strong> Color</li>
+            <li><strong>Destino - Tipo de archivo:</strong> PDF</li>
+            <li><strong>Enviar a:</strong> Carpeta local/red (definir ruta según tribunal o usuario)</li>
+          </ul>
+
+          <p>
+            Guardar la configuración y realizar una prueba de escaneo para confirmar que 
+            se genera correctamente el documento PDF en la carpeta configurada.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </section> 
+
+
+
+    
+<!-- ============================================================= -->
+<!--  SCRIPTS (AL FINAL DEL BODY)                                 -->
+<!-- ============================================================= -->
+
+<script>
+function buscarSeriePartSurfer() {
+  const serie = document.getElementById('hpPartInput').value.trim();
+
+  if (serie === "") {
+    alert("Debe ingresar un número de serie.");
+    return;
+  }
+
+  const url = `https://partsurfer.hp.com/?searchtext=${encodeURIComponent(serie)}`;
+  window.open(url, "_blank");
+}
+</script>
+
+
+
+
+<script>
+function copyMauwebUrl() {
+  const url = 'http://mesaayuda.intranet.pjud/mesa_ayuda/index.php';
+
+  navigator.clipboard.writeText(url)
+    .then(() => alert('Enlace de MAUWEB copiado al portapapeles.'))
+    .catch(() => alert('Error al copiar el enlace.'));
+}
+
+function buscarRequerimientoMauweb() {
+  const folio = document.getElementById('mauwebReqInput').value.trim();
+
+  if (folio === "") {
+    alert("Debe ingresar un número de requerimiento.");
+    return;
+  }
+
+  const url = `http://mesaayuda.intranet.pjud/mesa_ayuda/consultaporreq.php?req=${folio}`;
+  window.open(url, "_blank");
+}
+
+function showSection(sectionId) {
+  const mainNav = document.getElementById('mainNav');
+  const menuFooter = document.getElementById('menuFooter');
+  const sections = document.querySelectorAll('.content-section');
+
+  // Oculta menú principal y footer
+  mainNav.style.display = 'none';
+  if (menuFooter) menuFooter.style.display = 'none';
+
+  // Muestra solo la sección seleccionada
+  sections.forEach(section => section.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showMain() {
+  const mainNav = document.getElementById('mainNav');
+  const menuFooter = document.getElementById('menuFooter');
+  const sections = document.querySelectorAll('.content-section');
+
+  // Oculta todas las secciones
+  sections.forEach(section => section.classList.remove('active'));
+
+  // Muestra menú principal y footer
+  mainNav.style.display = 'block';
+  if (menuFooter) menuFooter.style.display = 'block';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+function copyProManagerUrl() {
+  const url = 'https://serviciomda.promanager.cl/login';
+
+  navigator.clipboard.writeText(url)
+    .then(() => alert('Enlace de ProManager copiado al portapapeles.'))
+    .catch(() => alert('No se pudo copiar el enlace.'));
+}
+
+
+document.querySelectorAll('.nav-card').forEach(card => {
+  card.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') this.click();
+  });
+});
+
+function toggleProcedure(procId) {
+  const elem = document.getElementById(procId);
+  if (!elem) return;
+
+  const procedureItem = elem.closest('.procedure-item');
+  if (procedureItem) {
+    procedureItem.classList.toggle('expanded');
+  }
+}
+</script>
+
+
+<script>
+  
+  function toggleStepImage(id) {
+  const img = document.getElementById(id);
+  const btn = document.getElementById(id + "-btn");
+
+  if (!img || !btn) return;
+
+  if (img.style.display === "none" || img.style.display === "") {
+    img.style.display = "block";
+    btn.textContent = "Ocultar imagen";
+  } else {
+    img.style.display = "none";
+    btn.textContent = "Mostrar imagen";
+  }
+}
+  
+</script>
+
+<script>
+  function runAdvancedSearch() {
+  const query = document.getElementById("advancedSearchInput").value.toLowerCase().trim();
+  const resultsBox = document.getElementById("searchResults");
+
+  if (query === "") {
+    resultsBox.style.display = "none";
+    resultsBox.innerHTML = "";
+    return;
+  }
+
+  // 🔥 Seleccionamos SOLO texto, NO imágenes
+  const nodes = document.querySelectorAll(
+    "h2, h3, h4, p, li, .procedure-title, .procedure-step"
+  );
+
+  const words = query.split(" ");
+  let results = [];
+
+  nodes.forEach(node => {
+    const text = node.innerText?.toLowerCase();
+    if (!text) return;
+
+    if (!words.every(w => text.includes(w))) return;
+
+    results.push({
+      element: node,
+      preview: text.substring(0, 200) + "..."
+    });
+  });
+
+  window.__searchResults = results;
+
+  resultsBox.style.display = "block";
+  resultsBox.innerHTML = "";
+
+  results.forEach((r, index) => {
+    resultsBox.innerHTML += `
+      <div class="search-item" onclick="goToSearchResult(${index})">
+        ${r.preview}
+      </div>`;
+  });
+}
+
+
+
+// Cuando el usuario selecciona un resultado
+function goToSearchResult(index) {
+  const result = window.__searchResults[index];
+  if (!result) return;
+
+  const element = result.element;
+
+  // 1. Detectar en qué módulo está
+  const section = element.closest(".content-section");
+  if (!section) return;
+
+  const sectionId = section.id;
+
+  // 2. Mostrar módulo
+  showSection(sectionId);
+
+  setTimeout(() => {
+    // 3. Si está dentro de un procedimiento, abrirlo
+    const proc = element.closest(".procedure-item");
+    if (proc) proc.classList.add("expanded");
+
+    // 4. Hacer scroll al elemento exacto
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+    // 5. Resaltar temporalmente
+    const originalBg = element.style.backgroundColor;
+    element.style.backgroundColor = "yellow";
+
+    setTimeout(() => {
+      element.style.backgroundColor = originalBg;
+    }, 1500);
+
+  }, 300);
+}
+</script>
+
+
+
+</body>
+</html>
